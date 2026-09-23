@@ -1,0 +1,20 @@
+[
+  {
+    "year": 2025,
+    "edition": 2,
+    "published": true,
+    "theme": { "sr": "Granice", "en": "Borders" },
+    "dates": { "sr": "Oktobar 2025", "en": "October 2025" },
+    "cover": "files/images/editions/2025/cover.webp",
+    "stats": { "submitted": 1450, "countries": 68, "selected": 32, "awards": 8 }
+  },
+  {
+    "year": 2024,
+    "edition": 1,
+    "published": true,
+    "theme": { "sr": "Prva linija", "en": "The First Line" },
+    "dates": { "sr": "Oktobar 2024", "en": "October 2024" },
+    "cover": "files/images/editions/2024/cover.webp",
+    "stats": { "submitted": 820, "countries": 45, "selected": 24, "awards": 6 }
+  }
+]

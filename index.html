@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fine Line Film Fest</title>
+    <meta name="description" content="Fine Line Film Fest – a weekend short film festival in Belgrade, Serbia. Made for filmmakers by filmmakers.">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:title" content="Fine Line Film Fest">
+    <meta property="og:description" content="Made for filmmakers by filmmakers. Short film festival in Belgrade, Serbia.">
+    <meta property="og:image" content="files/images/logo/logo.webp">
+    <link rel="icon" href="files/images/logo/logo.webp" type="image/webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script>document.documentElement.classList.add('js')</script>
+
+    <script src="assets/js/i18n.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+    <a class="brand" href="./" aria-label="Fine Line Film Fest">
+        <img src="files/images/logo/logo.webp" alt="Fine Line Film Fest" width="60" height="45">
+    </a>
+    <nav class="main-nav" id="main-nav">
+        <a href="festival.html" data-i18n="nav.festival">Festival</a>
+        <a href="o-nama.html" data-i18n="nav.about">O nama</a>
+        <a href="arhiva.html" data-i18n="nav.archive">Arhiva</a>
+        <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
+    </nav>
+    <div class="lang-switch">
+        <button type="button" data-lang="sr">SR</button>
+        <button type="button" data-lang="en">EN</button>
+    </div>
+    <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Menu"><span></span><span></span></button>
+</header>
+
+<main>
+    <!-- 1. HERO: video preko celog ekrana (files/videos/hero.mp4) -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto">
+            <source src="files/videos/hero.mp4" type="video/mp4">
+        </video>
+        <div class="hero-shade"></div>
+
+        <div class="hero-inner">
+            <img class="hero-logo" src="files/images/logo/logo.webp" alt="Fine Line Film Fest" width="520" height="390" fetchpriority="high">
+            <span class="hero-line" aria-hidden="true"></span>
+            <p class="hero-tagline">Made for filmmakers<br>by filmmakers</p>
+        </div>
+
+        <a class="scroll-down" href="#split" aria-label="Scroll"><span></span></a>
+    </section>
+
+    <!-- 2. VERTIKALNA PODELA: tri kolone, svaka sa svojim videom (split-1/2/3.mp4) -->
+    <section class="split" id="split">
+        <a class="split-item" href="festival.html">
+            <video muted loop playsinline preload="none" data-src="files/videos/split-1.mp4"></video>
+            <div class="split-content">
+                <h2 class="split-title" data-i18n="split.explore">Istraži</h2>
+                <span class="split-link"><span data-i18n="split.explore.sub">festival</span><i></i></span>
+            </div>
+        </a>
+        <a class="split-item" href="arhiva.html">
+            <video muted loop playsinline preload="none" data-src="files/videos/split-2.mp4"></video>
+            <div class="split-content">
+                <h2 class="split-title" data-i18n="split.rewind">Proživi</h2>
+                <span class="split-link"><span data-i18n="split.rewind.sub">ponovo</span><i></i></span>
+            </div>
+        </a>
+        <a class="split-item" href="o-nama.html">
+            <video muted loop playsinline preload="none" data-src="files/videos/split-3.mp4"></video>
+            <div class="split-content">
+                <h2 class="split-title" data-i18n="split.connect">Poveži se</h2>
+                <span class="split-link"><span data-i18n="split.connect.sub">sa nama</span><i></i></span>
+            </div>
+        </a>
+    </section>
+
+    <!-- 3. PARTNERI + PRIDRUŽI NAM SE + KONTAKT -->
+    <section class="connect" id="kontakt">
+        <div class="connect-partners">
+            <h2 class="eyebrow reveal" data-i18n="partners.title">Partneri festivala</h2>
+            <!-- Logo partnera: files/images/partners/ (najbolje belo PNG/SVG/WebP na providnoj pozadini) -->
+            <ul class="partner-grid">
+                <li class="reveal"><img src="files/images/partners/partner-1.webp" alt="Partner 1" loading="lazy"></li>
+                <li class="reveal"><img src="files/images/partners/partner-2.webp" alt="Partner 2" loading="lazy"></li>
+                <li class="reveal"><img src="files/images/partners/partner-3.webp" alt="Partner 3" loading="lazy"></li>
+                <li class="reveal"><img src="files/images/partners/partner-4.webp" alt="Partner 4" loading="lazy"></li>
+                <li class="reveal"><img src="files/images/partners/partner-5.webp" alt="Partner 5" loading="lazy"></li>
+                <li class="reveal"><img src="files/images/partners/partner-6.webp" alt="Partner 6" loading="lazy"></li>
+            </ul>
+        </div>
+
+        <div class="connect-join">
+            <a class="join-btn reveal" href="mailto:info@finelinefilmfest.com">
+                <span data-i18n="join">Pridruži nam se</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+        </div>
+
+        <div class="connect-bottom">
+            <ul class="contact-links reveal">
+                <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+                <li><a href="mailto:info@finelinefilmfest.com">info@finelinefilmfest.com</a></li>
+                <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
+            </ul>
+            <p class="copyright">© <span data-year></span> Fine Line Film Fest · <span data-i18n="location">Beograd, Srbija</span></p>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+{
+    "name": "Fine Line Film Fest",
+    "logo": "files/images/logo/logo.webp",
+    "tagline": {
+        "sr": "Made for filmmakers by filmmakers.",
+        "en": "Made for filmmakers by filmmakers."
+    },
+    "next_edition": {
+        "year": 2026,
+        "dates": {
+            "sr": "Datumi uskoro",
+            "en": "Dates coming soon"
+        },
+        "location": {
+            "sr": "Beograd, Srbija",
+            "en": "Belgrade, Serbia"
+        },
+        "submissions_open": true
+    },
+    "hero": {
+        "video": "files/videos/hero.mp4",
+        "poster": "files/images/hero.webp"
+    },
+    "links": {
+        "submit": "https://filmfreeway.com/",
+        "call": "#"
+    },
+    "contact": {
+        "email": "info@finelinefilmfest.com",
+        "phone": "",
+        "address": {
+            "sr": "Beograd, Srbija",
+            "en": "Belgrade, Serbia"
+        }
+    },
+    "social": {
+        "instagram": "https://www.instagram.com/",
+        "facebook": "https://www.facebook.com/"
+    },
+    "festival": {
+        "intro": {
+            "en": "FINE LINE was created with the aim to create a bridge between the world and Belgrade audience. Our festival is dedicated to the celebration of short films and filmmakers while creating a community for artists to feel free to share their knowledge and love for cinema with each other.\n\nThis is a unique festival experience which takes place over a weekend in Belgrade, Serbia. During 2 days of screenings the audience will have the opportunity to watch short films and meet filmmakers of selected films. We put a lot of focus on live dialogue so we give our best to have filmmakers of selected films in attendance and that’s one of the aspects that makes FINE LINE special.\n\nApart from screenings, we host traditional filmmakers lunch at the heart of Belgrade in historical street Skadarlija as an opportunity for representatives of selected films to meet and feel the atmosphere of Belgrade along with parties and other networking opportunities.\n\nDuring our festival there is a special program called IN TALKS which takes the form of a recorded interview where filmmakers go more in depth about their films. This interview is shared on social media afterwards.\n\nMade for filmmakers by filmmakers.",
+            "sr": "FINE LINE je nastao sa ciljem da izgradi most između sveta i beogradske publike. Festival je posvećen slavljenju kratkog filma i filmskih autora, uz stvaranje zajednice u kojoj umetnici slobodno dele svoje znanje i ljubav prema filmu.\n\nOvo je jedinstveno festivalsko iskustvo koje se odvija tokom jednog vikenda u Beogradu. Tokom dva dana projekcija publika ima priliku da pogleda kratke filmove i upozna autore odabranih filmova. Veliki fokus stavljamo na živi dijalog, zato dajemo sve od sebe da autori selektovanih filmova budu prisutni – to je jedna od stvari koje FINE LINE čine posebnim.\n\nPored projekcija, organizujemo tradicionalni ručak za autore u srcu Beograda, u istorijskoj Skadarliji, kao priliku da se predstavnici odabranih filmova upoznaju i osete atmosferu grada, uz žurke i druge prilike za umrežavanje.\n\nTokom festivala održava se i poseban program IN TALKS – snimljeni intervjui u kojima autori detaljnije govore o svojim filmovima, a koji se potom objavljuju na društvenim mrežama.\n\nMade for filmmakers by filmmakers."
+        },
+        "pillars": [
+            {
+                "title": {
+                    "sr": "Projekcije",
+                    "en": "Screenings"
+                },
+                "text": {
+                    "sr": "Pažljivo odabrana zvanična selekcija kratkih filmova iz celog sveta.",
+                    "en": "A carefully curated official selection of short films from around the world."
+                }
+            },
+            {
+                "title": {
+                    "sr": "Nagrade",
+                    "en": "Awards"
+                },
+                "text": {
+                    "sr": "Stručni žiri dodeljuje nagrade u više kategorija, uz nagradu publike.",
+                    "en": "An expert jury presents awards across several categories, plus an audience award."
+                }
+            },
+            {
+                "title": {
+                    "sr": "Susreti",
+                    "en": "Encounters"
+                },
+                "text": {
+                    "sr": "Razgovori sa autorima, master klasovi i druženje posle projekcija.",
+                    "en": "Q&As with filmmakers, masterclasses and gatherings after the screenings."
+                }
+            }
+        ],
+        "categories": [
+            {
+                "sr": "Igrani film",
+                "en": "Fiction"
+            },
+            {
+                "sr": "Dokumentarni film",
+                "en": "Documentary"
+            },
+            {
+                "sr": "Animirani film",
+                "en": "Animation"
+            },
+            {
+                "sr": "Eksperimentalni film",
+                "en": "Experimental"
+            }
+        ]
+    },
+    "about": {
+        "intro": {
+            "sr": "Mi smo nezavisna grupa filmskih radnika, producenata i entuzijasta. Festival pravimo iz ljubavi prema kratkoj formi i verujemo da najbolji filmovi često nastaju upravo na tankoj liniji.",
+            "en": "We are an independent group of filmmakers, producers and enthusiasts. We make the festival out of love for the short form, believing that the best films are often born right on the fine line."
+        }
+    },
+    "team": [
+        {
+            "name": "Ime Prezime",
+            "role": {
+                "sr": "Direktor festivala",
+                "en": "Festival Director"
+            },
+            "photo": "files/images/team/member-1.webp"
+        },
+        {
+            "name": "Ime Prezime",
+            "role": {
+                "sr": "Umetnički direktor",
+                "en": "Artistic Director"
+            },
+            "photo": "files/images/team/member-2.webp"
+        },
+        {
+            "name": "Ime Prezime",
+            "role": {
+                "sr": "Selektor programa",
+                "en": "Programmer"
+            },
+            "photo": "files/images/team/member-3.webp"
+        },
+        {
+            "name": "Ime Prezime",
+            "role": {
+                "sr": "Producent",
+                "en": "Producer"
+            },
+            "photo": "files/images/team/member-4.webp"
+        }
+    ],
+    "partners": [
+        {
+            "name": "Partner 1",
+            "logo": "files/images/partners/partner-1.webp",
+            "url": "#"
+        },
+        {
+            "name": "Partner 2",
+            "logo": "files/images/partners/partner-2.webp",
+            "url": "#"
+        },
+        {
+            "name": "Partner 3",
+            "logo": "files/images/partners/partner-3.webp",
+            "url": "#"
+        },
+        {
+            "name": "Partner 4",
+            "logo": "files/images/partners/partner-4.webp",
+            "url": "#"
+        },
+        {
+            "name": "Partner 5",
+            "logo": "files/images/partners/partner-5.webp",
+            "url": "#"
+        },
+        {
+            "name": "Partner 6",
+            "logo": "files/images/partners/partner-6.webp",
+            "url": "#"
+        }
+    ]
+}
