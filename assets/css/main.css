@@ -33,6 +33,11 @@ p { margin: 0; }
 html.fp, html.fp body { height: 100%; overflow: hidden; overscroll-behavior: none; }
 .fp main { transition: transform 1.2s cubic-bezier(.77, 0, .18, 1); will-change: transform; }
 
+/* Telefon/tablet: ugrađeni skrol telefona sa „magnetom“ – jedan swipe = jedan ekran */
+html.snap { scroll-snap-type: y mandatory; }
+.snap main > section { scroll-snap-align: start; scroll-snap-stop: always; }
+html.snap.menu-lock { overflow: hidden; }
+
 /* ---------- Header ---------- */
 .site-header {
     position: fixed; inset: 0 0 auto; z-index: 50;
@@ -104,7 +109,8 @@ html.fp, html.fp body { height: 100%; overflow: hidden; overscroll-behavior: non
 /* ---------- Linija skrola ---------- */
 .scrollbar { position: fixed; right: clamp(14px, 1.6vw, 28px); top: 50%; z-index: 40; width: 12px; height: clamp(120px, 26vh, 240px); transform: translateY(-50%); cursor: pointer; }
 .scrollbar::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: rgba(255,255,255,.2); }
-.scrollbar-thumb { position: absolute; left: 50%; top: 0; width: 3px; margin-left: -1px; background: var(--text); transition: transform 1.2s cubic-bezier(.77, 0, .18, 1), height .4s; }
+.scrollbar-thumb { position: absolute; left: 50%; top: 0; width: 3px; margin-left: -1px; background: var(--text); transition: transform .25s linear, height .4s; }
+.fp .scrollbar-thumb { transition: transform 1.2s cubic-bezier(.77, 0, .18, 1), height .4s; }
 
 /* ---------- Dosadašnja selekcija ---------- */
 .selection {
@@ -186,8 +192,19 @@ html.fp, html.fp body { height: 100%; overflow: hidden; overscroll-behavior: non
 
 @media (max-width: 860px) {
     .scrollbar { right: 8px; }
-    .selection { grid-template-rows: auto auto auto; height: auto; min-height: 100svh; padding: 96px var(--pad) 40px; align-content: start; }
-    .film { grid-template-columns: 1fr; gap: 20px; }
-    .film-body { gap: 10px; }
+    /* selekcija staje u jedan ekran telefona */
+    .selection { min-height: 0; grid-template-rows: auto minmax(0, 1fr) auto; gap: 14px; padding: 76px var(--pad) 20px; }
+    .selection-head { gap: 10px; align-items: center; }
+    .selection-title { font-size: clamp(26px, 8vw, 36px); }
+    .year-filter button { font-size: 17px; padding: .25em .8em .3em; }
+    .film { grid-template-columns: 1fr; grid-template-rows: auto minmax(0, 1fr); gap: 14px; align-items: start; align-content: start; overflow: hidden; }
+    .film-media { aspect-ratio: 16 / 10; max-height: 34svh; }
+    .film-body { gap: 6px; min-height: 0; }
+    .film-meta { font-size: 17px; }
+    .film-name { font-size: clamp(26px, 7.5vw, 34px); }
+    .film-director { font-size: 14px; }
+    .film-synopsis { font-size: 14px; line-height: 1.55; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden; }
+    .film-trailer { margin-top: 2px; }
     .film-nav { justify-content: center; }
+    .film-arrow { width: 44px; height: 44px; }
 }

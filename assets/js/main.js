@@ -29,6 +29,8 @@
     let enabled = false;
     let locked = false;
     let lastWheel = 0;
+    // Telefon/tablet: ugrađeni skrol + CSS scroll-snap (glatko, bez seckanja)
+    const isTouch = matchMedia('(hover: none) and (pointer: coarse)').matches;
 
     const thumb = $('.scrollbar-thumb');
     const updateScrollbar = () => {
@@ -64,6 +66,12 @@
     const fits = () => sections.every(s => s.offsetHeight <= innerHeight + 2);
 
     const setMode = () => {
+        if (isTouch) {
+            enabled = false;
+            root.classList.add('snap');
+            updateUI();
+            return;
+        }
         root.classList.remove('fp');
         main.style.transform = '';
         const shouldEnable = fits();
@@ -105,7 +113,8 @@
 
     addEventListener('scroll', updateUI, { passive: true });
     let resizeTimer;
-    addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(setMode, 150); });
+    // Na telefonu se visina menja dok se adresna traka sakriva – tada ne diramo režim
+    if (!isTouch) addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(setMode, 150); });
 
     // Klik na liniju skrola vodi na odgovarajuću stranicu
     $('.scrollbar').addEventListener('click', e => {
@@ -129,6 +138,7 @@
     /* ---------- Mobilni meni ---------- */
     function setMenu(open) {
         document.body.classList.toggle('menu-open', open);
+        root.classList.toggle('menu-lock', open);
         toggle.setAttribute('aria-expanded', String(open));
     }
     toggle.addEventListener('click', () => setMenu(!menuOpen()));
@@ -257,13 +267,15 @@
     $('[data-film-next]').addEventListener('click', () => stepFilm(1));
 
     // Swipe levo/desno po filmu (telefon)
-    let fx = null;
-    film.addEventListener('touchstart', e => { fx = e.touches[0].clientX; }, { passive: true });
+    let fx = null, fy = null;
+    film.addEventListener('touchstart', e => { fx = e.touches[0].clientX; fy = e.touches[0].clientY; }, { passive: true });
     film.addEventListener('touchend', e => {
         if (fx === null) return;
         const dx = e.changedTouches[0].clientX - fx;
-        if (Math.abs(dx) > 60) stepFilm(dx < 0 ? 1 : -1);
-        fx = null;
+        const dy = e.changedTouches[0].clientY - fy;
+        // samo jasan horizontalni swipe menja film (vertikalni je skrol stranice)
+        if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) stepFilm(dx < 0 ? 1 : -1);
+        fx = fy = null;
     });
 
     /* ---------- Trejler ---------- */
