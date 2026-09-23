@@ -5,29 +5,19 @@ window.I18N = {
         'nav.about': 'O nama',
         'nav.archive': 'Arhiva',
         'nav.contact': 'Kontakt',
-        'split.rewind': 'Proživi',
-        'split.rewind.sub': 'ponovo',
-        'split.explore': 'Istraži',
-        'split.explore.sub': 'festival',
-        'split.connect': 'Poveži se',
-        'split.connect.sub': 'sa nama',
-        'partners.title': 'Partneri festivala',
-        'join': 'Pridruži nam se',
-        'location': 'Beograd, Srbija'
+        'submit': 'Pošalji prijavu',
+        'selection.title': 'Dosadašnja selekcija',
+        'film.director': 'Režija',
+        'film.trailer': 'Pogledaj trejler'
     },
     en: {
         'nav.festival': 'Festival',
         'nav.about': 'Who we are',
         'nav.archive': 'Archive',
         'nav.contact': 'Contact',
-        'split.rewind': 'Rewind',
-        'split.rewind.sub': 'through the years',
-        'split.explore': 'Explore',
-        'split.explore.sub': 'the festival',
-        'split.connect': 'Connect',
-        'split.connect.sub': 'with us',
-        'partners.title': 'Festival partners',
-        'join': 'Join us',
-        'location': 'Belgrade, Serbia'
+        'submit': 'Submit your film',
+        'selection.title': 'Past selections',
+        'film.director': 'Director',
+        'film.trailer': 'Watch trailer'
     }
 };

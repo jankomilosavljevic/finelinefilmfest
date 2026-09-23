@@ -1,29 +1,20 @@
 {
     "name": "Fine Line Film Fest",
     "logo": "files/images/logo/logo.webp",
+    "event": {
+        "dates": {
+            "sr": "Datum uskoro",
+            "en": "Date coming soon"
+        },
+        "venue": {
+            "name": "",
+            "logo": ""
+        },
+        "submit_url": "https://filmfreeway.com/FineLineFilmFest"
+    },
     "tagline": {
         "sr": "Made for filmmakers by filmmakers.",
         "en": "Made for filmmakers by filmmakers."
-    },
-    "next_edition": {
-        "year": 2026,
-        "dates": {
-            "sr": "Datumi uskoro",
-            "en": "Dates coming soon"
-        },
-        "location": {
-            "sr": "Beograd, Srbija",
-            "en": "Belgrade, Serbia"
-        },
-        "submissions_open": true
-    },
-    "hero": {
-        "video": "files/videos/hero.mp4",
-        "poster": "files/images/hero.webp"
-    },
-    "links": {
-        "submit": "https://filmfreeway.com/",
-        "call": "#"
     },
     "contact": {
         "email": "info@finelinefilmfest.com",
@@ -131,38 +122,6 @@
                 "en": "Producer"
             },
             "photo": "files/images/team/member-4.webp"
-        }
-    ],
-    "partners": [
-        {
-            "name": "Partner 1",
-            "logo": "files/images/partners/partner-1.webp",
-            "url": "#"
-        },
-        {
-            "name": "Partner 2",
-            "logo": "files/images/partners/partner-2.webp",
-            "url": "#"
-        },
-        {
-            "name": "Partner 3",
-            "logo": "files/images/partners/partner-3.webp",
-            "url": "#"
-        },
-        {
-            "name": "Partner 4",
-            "logo": "files/images/partners/partner-4.webp",
-            "url": "#"
-        },
-        {
-            "name": "Partner 5",
-            "logo": "files/images/partners/partner-5.webp",
-            "url": "#"
-        },
-        {
-            "name": "Partner 6",
-            "logo": "files/images/partners/partner-6.webp",
-            "url": "#"
         }
     ]
 }

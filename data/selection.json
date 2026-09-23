@@ -1,0 +1,163 @@
+{
+    "years": [
+        {
+            "year": 2025,
+            "films": [
+                {
+                    "title": "Naziv filma 1",
+                    "director": "Ime Prezime",
+                    "country": {
+                        "sr": "Zemlja",
+                        "en": "Country"
+                    },
+                    "year": 2025,
+                    "duration": 15,
+                    "synopsis": {
+                        "sr": "Ovde ide sinopsis filma.",
+                        "en": "Film synopsis goes here."
+                    },
+                    "image": "files/images/editions/2023/photo1.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "Naziv filma 2",
+                    "director": "Ime Prezime",
+                    "country": {
+                        "sr": "Zemlja",
+                        "en": "Country"
+                    },
+                    "year": 2025,
+                    "duration": 15,
+                    "synopsis": {
+                        "sr": "Ovde ide sinopsis filma.",
+                        "en": "Film synopsis goes here."
+                    },
+                    "image": "files/images/editions/2023/photo2.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "Naziv filma 3",
+                    "director": "Ime Prezime",
+                    "country": {
+                        "sr": "Zemlja",
+                        "en": "Country"
+                    },
+                    "year": 2025,
+                    "duration": 15,
+                    "synopsis": {
+                        "sr": "Ovde ide sinopsis filma.",
+                        "en": "Film synopsis goes here."
+                    },
+                    "image": "files/images/editions/2023/photo3.webp",
+                    "trailer": ""
+                }
+            ]
+        },
+        {
+            "year": 2024,
+            "films": [
+                {
+                    "title": "Naziv filma 1",
+                    "director": "Ime Prezime",
+                    "country": {
+                        "sr": "Zemlja",
+                        "en": "Country"
+                    },
+                    "year": 2024,
+                    "duration": 15,
+                    "synopsis": {
+                        "sr": "Ovde ide sinopsis filma.",
+                        "en": "Film synopsis goes here."
+                    },
+                    "image": "files/images/editions/2023/photo4.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "Naziv filma 2",
+                    "director": "Ime Prezime",
+                    "country": {
+                        "sr": "Zemlja",
+                        "en": "Country"
+                    },
+                    "year": 2024,
+                    "duration": 15,
+                    "synopsis": {
+                        "sr": "Ovde ide sinopsis filma.",
+                        "en": "Film synopsis goes here."
+                    },
+                    "image": "files/images/editions/2023/photo5.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "Naziv filma 3",
+                    "director": "Ime Prezime",
+                    "country": {
+                        "sr": "Zemlja",
+                        "en": "Country"
+                    },
+                    "year": 2024,
+                    "duration": 15,
+                    "synopsis": {
+                        "sr": "Ovde ide sinopsis filma.",
+                        "en": "Film synopsis goes here."
+                    },
+                    "image": "files/images/editions/2023/photo6.webp",
+                    "trailer": ""
+                }
+            ]
+        },
+        {
+            "year": 2023,
+            "films": [
+                {
+                    "title": "Naziv filma 1",
+                    "director": "Ime Prezime",
+                    "country": {
+                        "sr": "Zemlja",
+                        "en": "Country"
+                    },
+                    "year": 2023,
+                    "duration": 15,
+                    "synopsis": {
+                        "sr": "Ovde ide sinopsis filma.",
+                        "en": "Film synopsis goes here."
+                    },
+                    "image": "files/images/editions/2023/photo7.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "Naziv filma 2",
+                    "director": "Ime Prezime",
+                    "country": {
+                        "sr": "Zemlja",
+                        "en": "Country"
+                    },
+                    "year": 2023,
+                    "duration": 15,
+                    "synopsis": {
+                        "sr": "Ovde ide sinopsis filma.",
+                        "en": "Film synopsis goes here."
+                    },
+                    "image": "files/images/editions/2023/photo8.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "Naziv filma 3",
+                    "director": "Ime Prezime",
+                    "country": {
+                        "sr": "Zemlja",
+                        "en": "Country"
+                    },
+                    "year": 2023,
+                    "duration": 15,
+                    "synopsis": {
+                        "sr": "Ovde ide sinopsis filma.",
+                        "en": "Film synopsis goes here."
+                    },
+                    "image": "files/images/editions/2023/photo9.webp",
+                    "trailer": ""
+                }
+            ]
+        }
+    ]
+}
