@@ -1,13 +1,24 @@
 {
     "name": "Fine Line Film Fest",
     "logo": "files/images/logo/logo.webp",
+    "hero": {
+        "interval": 6,
+        "images": [
+            "files/images/editions/2023/gallery/photo17.webp",
+            "files/images/editions/2026/TDP_8207.webp",
+            "files/images/editions/2026/TDP_7774.webp",
+            "files/images/editions/2026/TDP_7772.webp",
+            "files/images/editions/2026/TDP_7767.webp",
+            "files/images/editions/2026/TDP_7235.webp"
+        ]
+    },
     "event": {
         "dates": {
             "sr": "Datum uskoro",
             "en": "Date coming soon"
         },
         "venue": {
-            "name": "",
+            "name": "MTS Dvorana",
             "logo": ""
         },
         "submit_url": "https://filmfreeway.com/FineLineFilmFest"
@@ -25,8 +36,8 @@
         }
     },
     "social": {
-        "instagram": "https://www.instagram.com/",
-        "facebook": "https://www.facebook.com/"
+        "instagram": "https://www.instagram.com/finelinefilmfest/",
+        "facebook": ""
     },
     "festival": {
         "intro": {

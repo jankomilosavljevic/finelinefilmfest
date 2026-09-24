@@ -177,6 +177,67 @@ input::placeholder, textarea::placeholder { color: rgba(245, 245, 245, .3); }
 }
 .toast.is-bad { background: var(--danger); }
 
+/* ---------- Karusel na početnoj ---------- */
+.hero-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.hero-tile { position: relative; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 6px; background: #070707; }
+.hero-tile img { width: 100%; height: 100%; object-fit: cover; }
+.hero-remove {
+    position: absolute; top: 6px; right: 6px; width: 30px; height: 30px; border-radius: 50%;
+    background: rgba(0, 0, 0, .75); font-size: 18px; line-height: 1;
+}
+.hero-remove:hover { background: var(--danger); color: #000; }
+
+.block > .field > input[type="number"] { max-width: 200px; }
+.hero-grid + .img-actions, .empty + .img-actions { margin-top: 8px; }
+
+/* ---------- Izbor slika (prozor) ---------- */
+.picker { position: fixed; inset: 0; z-index: 30; display: grid; place-items: center; padding: 24px; background: rgba(0, 0, 0, .8); }
+.picker-box { width: min(1100px, 100%); max-height: 100%; display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line-strong); border-radius: 10px; overflow: hidden; }
+.picker-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+.picker-head h2 { font-size: 18px; }
+.picker-body { overflow-y: auto; padding: 8px 20px 24px; }
+.picker-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }
+.pick { position: relative; aspect-ratio: 16 / 10; overflow: hidden; border-radius: 6px; background: #070707; outline: 2px solid transparent; outline-offset: -2px; }
+.pick img { width: 100%; height: 100%; object-fit: cover; transition: opacity .15s; }
+.pick:hover img { opacity: .8; }
+.pick-check { position: absolute; top: 6px; right: 6px; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--text); color: #000; font-weight: 700; font-size: 14px; opacity: 0; }
+.pick.is-selected { outline-color: var(--text); }
+.pick.is-selected .pick-check { opacity: 1; }
+
+/* ---------- Mediji ---------- */
+select {
+    font: inherit; color: var(--text); background: #070707;
+    border: 1px solid var(--line-strong); border-radius: 6px; padding: 9px 10px; max-width: 100%;
+}
+.drop { display: grid; gap: 14px; padding: 22px; border: 1px dashed var(--line-strong); border-radius: 10px; background: var(--panel); }
+.drop.is-over { border-color: var(--text); background: #1a1a1a; }
+.drop-title { font-weight: 700; font-size: 16px; }
+.drop-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.drop-row input { width: auto; flex: 1; min-width: 180px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 24px; }
+.chip { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; font-size: 13px; color: var(--muted); }
+.chip:hover { color: var(--text); border-color: var(--line-strong); }
+.chip.is-active { background: var(--text); color: #000; border-color: var(--text); }
+
+.media-group { margin-top: 26px; }
+.media-group h3 { margin: 0 0 12px; font-size: 14px; font-weight: 500; color: var(--muted); letter-spacing: .02em; }
+.media-group h3 small { font-size: inherit; opacity: .6; }
+.media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.media-item { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.media-thumb { position: relative; display: block; aspect-ratio: 16 / 10; background: #070707; }
+.media-thumb img, .media-thumb video { width: 100%; height: 100%; object-fit: cover; }
+.media-badge { position: absolute; left: 8px; bottom: 8px; padding: 2px 8px; border-radius: 4px; background: rgba(0, 0, 0, .75); font-size: 12px; }
+.media-info { display: grid; gap: 3px; padding: 10px 12px 4px; min-width: 0; flex: 1; }
+.media-name { font-size: 13px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.media-meta { font-size: 12px; color: var(--muted); }
+.media-uses { font-size: 12px; color: var(--ok); }
+.media-unused { font-size: 12px; color: rgba(245, 245, 245, .35); }
+.media-code { font-size: 12px; color: var(--warn); }
+.media-actions { padding: 4px 6px 8px; }
+.media-actions .confirm { flex-wrap: wrap; padding: 0 6px; }
+.media-actions .confirm-q { font-size: 12.5px; flex-basis: 100%; margin: 2px 0 6px; }
+
 /* ---------- Telefon / manji ekran ---------- */
 @media (max-width: 860px) {
     .app { grid-template-columns: minmax(0, 1fr); align-content: start; }
@@ -198,4 +259,8 @@ input::placeholder, textarea::placeholder { color: rgba(245, 245, 245, .3); }
     .card-head { flex-wrap: wrap; padding: 10px 12px; }
     .film-thumb { width: 64px; }
     .card-tools { margin-left: auto; }
+    .picker { padding: 0; }
+    .picker-box { height: 100%; border-radius: 0; }
+    .media-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .drop { padding: 16px; }
 }

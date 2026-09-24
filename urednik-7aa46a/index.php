@@ -3,6 +3,13 @@
 declare(strict_types=1);
 require __DIR__ . '/lib.php';
 
+// /urednik-… → /urednik-…/ (inače ne rade relativne putanje ni kolačić)
+$uriPath = strtok($_SERVER['REQUEST_URI'], '?');
+if (!str_ends_with($uriPath, '/') && !str_ends_with($uriPath, '.php')) {
+    header('Location: ' . $uriPath . '/', true, 301);
+    exit;
+}
+
 send_security_headers();
 header('Content-Type: text/html; charset=utf-8');
 start_session();
@@ -12,7 +19,7 @@ $error = '';
 
 if ($configured && $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
     if (!csrf_ok($_POST['csrf'] ?? null)) {
-        $error = 'Stranica je bila otvorena predugo. Pokušaj ponovo.';
+        $error = 'Unesi šifru još jednom.';
     } elseif ($wait = locked_for()) {
         $error = 'Previše pogrešnih pokušaja. Pokušaj ponovo za ' . ceil($wait / 60) . ' min.';
     } elseif (login((string) $_POST['password'])) {
@@ -40,7 +47,7 @@ $csrf = csrf_token();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="admin.css?v=1">
+    <link rel="stylesheet" href="admin.css?v=2">
 </head>
 <body>
 
@@ -71,10 +78,11 @@ $csrf = csrf_token();
         </a>
         <nav class="side-nav" data-nav>
             <button type="button" data-view="selection">Selekcija po godinama</button>
-            <button type="button" data-view="event">Početna: datum i prijave</button>
+            <button type="button" data-view="event">Početna: karusel i datum</button>
             <button type="button" data-view="contact">Kontakt i mreže</button>
             <button type="button" data-view="festival">O festivalu</button>
             <button type="button" data-view="about">O nama i tim</button>
+            <button type="button" data-view="media">Mediji</button>
             <button type="button" data-view="settings">Šifra</button>
         </nav>
         <div class="side-foot">
@@ -92,7 +100,7 @@ $csrf = csrf_token();
     </div>
 </div>
 <div class="toast" data-toast hidden></div>
-<script src="admin.js?v=1"></script>
+<script src="admin.js?v=2"></script>
 <?php endif; ?>
 
 </body>

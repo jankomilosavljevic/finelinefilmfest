@@ -4,3 +4,5 @@ urednik-7aa46a/_private/*
 # Rezervne kopije koje pravi admin
 data/_backup/*
 !data/_backup/.htaccess
+# Lokalno pokretanje
+pokreni-lokalno.bat

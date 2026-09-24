@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,10 +8,9 @@
     <meta name="theme-color" content="#000000">
     <meta property="og:title" content="Fine Line Film Fest">
     <meta property="og:description" content="Made for filmmakers by filmmakers.">
-    <meta property="og:image" content="files/images/editions/2023/photo17.webp">
+    <meta property="og:image" content="files/images/editions/2023/gallery/photo17.webp">
     <link rel="icon" href="files/images/logo/logo.webp" type="image/webp">
 
-    <link rel="preload" href="files/images/editions/2023/photo17.webp" as="image" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
@@ -29,9 +28,9 @@
     </a>
     <nav class="main-nav" id="main-nav">
         <a href="festival.html" data-i18n="nav.festival">Festival</a>
-        <a href="o-nama.html" data-i18n="nav.about">O nama</a>
-        <a href="arhiva.html" data-i18n="nav.archive">Arhiva</a>
-        <a href="kontakt.html" data-i18n="nav.contact">Kontakt</a>
+        <a href="o-nama.html" data-i18n="nav.about">Who we are</a>
+        <a href="arhiva.html" data-i18n="nav.archive">Archive</a>
+        <a href="kontakt.html" data-i18n="nav.contact">Contact</a>
     </nav>
     <div class="lang-switch">
         <button type="button" data-lang="sr">SR</button>
@@ -42,7 +41,10 @@
 
 <main>
     <section class="hero">
-        <img class="hero-bg" src="files/images/editions/2023/photo17.webp" alt="" fetchpriority="high">
+        <!-- Karusel: slike i trajanje dolaze iz data/site.json (hero), redosled je nasumičan -->
+        <div class="hero-slides" data-hero aria-hidden="true">
+            <noscript><img class="hero-bg is-on" src="files/images/editions/2023/gallery/photo17.webp" alt=""></noscript>
+        </div>
         <div class="hero-shade"></div>
 
         <div class="hero-inner">
@@ -58,7 +60,7 @@
                 </div>
 
                 <a class="submit-btn" href="#" target="_blank" rel="noopener" data-field="submit">
-                    <span data-i18n="submit">Pošalji prijavu</span>
+                    <span data-i18n="submit">Submit your film</span>
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                 </a>
             </div>
@@ -68,7 +70,7 @@
     <!-- 2. DOSADAŠNJA SELEKCIJA – filmovi dolaze iz data/selection.json -->
     <section class="selection" id="selekcija">
         <div class="selection-head">
-            <h2 class="selection-title" data-i18n="selection.title">Dosadašnja selekcija</h2>
+            <h2 class="selection-title" data-i18n="selection.title">Past selections</h2>
             <div class="year-filter" role="tablist" data-years></div>
         </div>
 
@@ -82,10 +84,10 @@
             <div class="film-body">
                 <p class="film-meta" data-film-meta></p>
                 <h3 class="film-name" data-film-title></h3>
-                <p class="film-director"><span data-i18n="film.director">Režija</span>: <strong data-film-director></strong></p>
+                <p class="film-director"><span data-i18n="film.director">Director</span>: <strong data-film-director></strong></p>
                 <p class="film-synopsis" data-film-synopsis></p>
                 <button class="film-trailer" type="button" data-film-trailer hidden>
-                    <span data-i18n="film.trailer">Pogledaj trejler</span>
+                    <span data-i18n="film.trailer">Watch trailer</span>
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                 </button>
             </div>

@@ -54,13 +54,26 @@ try {
             reply(['ok' => true, 'selection' => $sel]);
 
         case 'upload':
-            if (empty($_FILES) && (int) ($_SERVER['CONTENT_LENGTH'] ?? 0) > 0) reply(['error' => 'Slika je prevelika za server.'], 413);
+            if (empty($_FILES) && (int) ($_SERVER['CONTENT_LENGTH'] ?? 0) > 0) reply(['error' => 'Fajl je prevelik za server.'], 413);
             $target = (string) ($_POST['target'] ?? '');
-            if (preg_match('/^film:(\d{4})$/', $target, $m)) $folder = 'films/' . $m[1];
-            elseif ($target === 'venue') $folder = 'venues';
-            elseif ($target === 'team')  $folder = 'team';
-            else reply(['error' => 'Nepoznato mesto za sliku.'], 400);
-            reply(['ok' => true, 'path' => store_image($_FILES['file'] ?? [], $folder)]);
+            $file = $_FILES['file'] ?? [];
+            if (preg_match('/^film:(\d{4})$/', $target, $m)) $folder = 'images/films/' . $m[1];
+            elseif ($target === 'venue') $folder = 'images/venues';
+            elseif ($target === 'team')  $folder = 'images/team';
+            elseif ($target === 'hero')  $folder = 'images/hero';
+            elseif (str_starts_with($target, 'folder:')) $folder = substr($target, 7);   // iz Medija
+            else reply(['error' => 'Nepoznato mesto za fajl.'], 400);
+            $video = is_video_upload($file);
+            if ($video && !str_starts_with($target, 'folder:')) reply(['error' => 'Ovde ide slika, ne video.'], 422);
+            reply(['ok' => true, 'path' => $video ? store_video($file, $folder) : store_image($file, $folder)]);
+
+        case 'media':
+            reply(['ok' => true] + media_list());
+
+        case 'media-delete':
+            $in = json_decode((string) file_get_contents('php://input'), true) ?: [];
+            media_delete((string) ($in['path'] ?? ''));
+            reply(['ok' => true]);
 
         case 'password':
             $in = json_decode((string) file_get_contents('php://input'), true) ?: [];

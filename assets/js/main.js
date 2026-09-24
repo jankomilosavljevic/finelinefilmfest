@@ -9,11 +9,12 @@
     const toggle = $('.menu-toggle');
     const modal = $('[data-modal]');
 
-    let lang = 'sr';
+    let lang = 'en';
     let site = null;          // data/site.json
     let selection = null;     // data/selection.json
 
-    const tr = v => (v && typeof v === 'object') ? (v[lang] || v.sr || '') : (v ?? '');
+    // ako prevod fali (npr. sinopsis samo na engleskom), prikaži drugi jezik
+    const tr = v => (v && typeof v === 'object') ? (v[lang] || v.sr || v.en || '') : (v ?? '');
     const menuOpen = () => document.body.classList.contains('menu-open');
     const modalOpen = () => modal && !modal.hidden;
     const busy = () => menuOpen() || modalOpen();
@@ -144,6 +145,58 @@
     toggle.addEventListener('click', () => setMenu(!menuOpen()));
 
     /* ======================================================================
+       Hero karusel (data/site.json → hero): svaki ulazak počinje drugom
+       slikom, redosled je nasumičan, svaka stoji hero.interval sekundi
+       ====================================================================== */
+    const HERO_FADE = 1600;       // isto kao transition u CSS-u (.hero-bg)
+    const renderHero = () => {
+        const wrap = $('[data-hero]');
+        const cfg = (site && site.hero) || {};
+        const list = (cfg.images || []).filter(Boolean);
+        if (!wrap || !list.length) return;
+        for (let i = list.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [list[i], list[j]] = [list[j], list[i]];
+        }
+        const hold = Math.max(2, Number(cfg.interval) || 6) * 1000;
+
+        const slides = list.map(src => {
+            const img = new Image();
+            img.className = 'hero-bg';
+            img.alt = '';
+            img.dataset.src = src;
+            wrap.appendChild(img);
+            return img;
+        });
+        const load = img => {
+            if (!img.getAttribute('src')) img.src = img.dataset.src;
+            return img.decode ? img.decode().catch(() => {}) : Promise.resolve();
+        };
+
+        let cur = -1;
+        const show = i => load(slides[i]).then(() => {
+            const prev = slides[cur];
+            if (prev) {
+                prev.classList.replace('is-on', 'is-off');
+                setTimeout(() => prev.classList.remove('is-off'), HERO_FADE);
+            }
+            slides[i].classList.add('is-on');
+            cur = i;
+        });
+        const next = () => {
+            if (slides.length < 2) return;
+            const n = (cur + 1) % slides.length;
+            load(slides[n]);                      // učitaj sledeću dok ova stoji
+            setTimeout(() => {
+                // sakriven tab: ne vrti u prazno, nastavi kad se korisnik vrati
+                if (document.hidden) { document.addEventListener('visibilitychange', next, { once: true }); return; }
+                show(n).then(next);
+            }, hold);
+        };
+        show(0).then(next);
+    };
+
+    /* ======================================================================
        Hero: datum, logo lokacije, link za prijave (data/site.json)
        ====================================================================== */
     const renderEvent = () => {
@@ -211,7 +264,24 @@
         $('[data-film-count]').textContent = `${pad(filmIdx + 1)} / ${pad(films.length)}`;
         $('[data-film-prev]').disabled = films.length < 2;
         $('[data-film-next]').disabled = films.length < 2;
+        fitSynopsis();
     };
+
+    /* Telefon: sinopsis dobija onoliko redova koliko staje (završava se sa „…“),
+       umesto da ga ivica ekrana preseče po sredini reda */
+    const fitSynopsis = () => {
+        const syn = $('[data-film-synopsis]');
+        syn.style.removeProperty('-webkit-line-clamp');
+        if (!matchMedia('(max-width: 860px)').matches) return;
+        const body = syn.parentElement;
+        const limit = () => film.getBoundingClientRect().bottom + 0.5;
+        const bottom = () => Math.max(...[...body.children].filter(el => !el.hidden).map(el => el.getBoundingClientRect().bottom));
+        let lines = 8;
+        syn.style.setProperty('-webkit-line-clamp', lines);
+        while (lines > 1 && bottom() > limit()) syn.style.setProperty('-webkit-line-clamp', --lines);
+    };
+    addEventListener('resize', () => { if (selection) fitSynopsis(); });
+    if (document.fonts) document.fonts.ready.then(() => { if (selection) fitSynopsis(); });
 
     /* Slike se učitaju i dekodiraju unapred, da prelaz ne bi seckao */
     const imageCache = new Map();
@@ -306,17 +376,20 @@
         $$('[data-lang]').forEach(b => b.classList.toggle('is-active', b.dataset.lang === l));
         renderEvent();
         if (selection) fillFilm();
-        try { localStorage.setItem('lang', l); } catch (e) {}
     };
-    $$('[data-lang]').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+    // Pamti se samo jezik koji je posetilac sam izabrao
+    $$('[data-lang]').forEach(b => b.addEventListener('click', () => {
+        setLang(b.dataset.lang);
+        try { localStorage.setItem('fl-lang', b.dataset.lang); } catch (e) {}
+    }));
 
-    /* ---------- Start ---------- */
-    let saved = 'sr';
-    try { saved = localStorage.getItem('lang') || 'sr'; } catch (e) {}
+    /* ---------- Start: podrazumevano engleski ---------- */
+    let saved = 'en';
+    try { saved = localStorage.getItem('fl-lang') || 'en'; } catch (e) {}
     setLang(saved);
 
     const getJSON = url => fetch(url, { cache: 'no-cache' }).then(r => r.json());
-    getJSON('data/site.json').then(d => { site = d; renderEvent(); }).catch(() => {});
+    getJSON('data/site.json').then(d => { site = d; renderHero(); renderEvent(); }).catch(() => {});
     getJSON('data/selection.json').then(d => {
         selection = d;
         if (!selection.years || !selection.years.length) return;

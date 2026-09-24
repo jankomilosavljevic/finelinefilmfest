@@ -16,7 +16,7 @@
                         "sr": "Ovde ide sinopsis filma.",
                         "en": "Film synopsis goes here."
                     },
-                    "image": "files/images/editions/2023/photo1.webp",
+                    "image": "files/images/editions/2023/gallery/photo1.webp",
                     "trailer": ""
                 },
                 {
@@ -32,7 +32,7 @@
                         "sr": "Ovde ide sinopsis filma.",
                         "en": "Film synopsis goes here."
                     },
-                    "image": "files/images/editions/2023/photo2.webp",
+                    "image": "files/images/editions/2023/gallery/photo2.webp",
                     "trailer": ""
                 },
                 {
@@ -48,7 +48,7 @@
                         "sr": "Ovde ide sinopsis filma.",
                         "en": "Film synopsis goes here."
                     },
-                    "image": "files/images/editions/2023/photo3.webp",
+                    "image": "files/images/editions/2023/gallery/photo3.webp",
                     "trailer": ""
                 }
             ]
@@ -69,7 +69,7 @@
                         "sr": "Ovde ide sinopsis filma.",
                         "en": "Film synopsis goes here."
                     },
-                    "image": "files/images/editions/2023/photo4.webp",
+                    "image": "files/images/editions/2023/gallery/photo4.webp",
                     "trailer": ""
                 },
                 {
@@ -85,7 +85,7 @@
                         "sr": "Ovde ide sinopsis filma.",
                         "en": "Film synopsis goes here."
                     },
-                    "image": "files/images/editions/2023/photo5.webp",
+                    "image": "files/images/editions/2023/gallery/photo5.webp",
                     "trailer": ""
                 },
                 {
@@ -101,7 +101,7 @@
                         "sr": "Ovde ide sinopsis filma.",
                         "en": "Film synopsis goes here."
                     },
-                    "image": "files/images/editions/2023/photo6.webp",
+                    "image": "files/images/editions/2023/gallery/photo6.webp",
                     "trailer": ""
                 }
             ]
@@ -110,51 +110,291 @@
             "year": 2023,
             "films": [
                 {
-                    "title": "Naziv filma 1",
-                    "director": "Ime Prezime",
+                    "title": "5/3/0",
+                    "director": "Danilo Stanimirović",
                     "country": {
-                        "sr": "Zemlja",
-                        "en": "Country"
+                        "sr": "Srbija",
+                        "en": "Serbia"
                     },
                     "year": 2023,
-                    "duration": 15,
+                    "duration": 0,
                     "synopsis": {
-                        "sr": "Ovde ide sinopsis filma.",
-                        "en": "Film synopsis goes here."
+                        "sr": "Tokom noći, tinejdžerka se taksijem vozi do susednog grada. Posle uznemirujuće vožnje i još gore noći na rođendanskoj žurci kod drugarice, primorana je da se kući vrati sa pretećim taksistom koji insistira da sedne napred, pored njega.",
+                        "en": "During the night, a teenage girl is taking a taxi ride to the neighboring town. After a disturbing ride, and an even worse night at a friends birthday party, she is forced to return home with a menacing taxi driver who insists on her sitting in the front seat next to him."
                     },
-                    "image": "files/images/editions/2023/photo7.webp",
+                    "image": "files/images/editions/2023/films/530.webp",
                     "trailer": ""
                 },
                 {
-                    "title": "Naziv filma 2",
-                    "director": "Ime Prezime",
+                    "title": "A DAY, THAT YEAR",
+                    "director": "Stanley Xu",
                     "country": {
-                        "sr": "Zemlja",
-                        "en": "Country"
+                        "sr": "Tajvan",
+                        "en": "Taiwan"
                     },
                     "year": 2023,
-                    "duration": 15,
+                    "duration": 0,
                     "synopsis": {
-                        "sr": "Ovde ide sinopsis filma.",
-                        "en": "Film synopsis goes here."
+                        "sr": "Petogodišnji Jang provodi dan u kupovini sa majkom. Kada napravi scenu jer se oseća zapostavljeno, ona odluči da ga kazni tako što će otići od njega. Naizgled bezazlena kazna postaje presudno iskustvo iz detinjstva koje će Janga zauvek promeniti.",
+                        "en": "5 years old Yang spends the day with his mother on a shopping trip. When he throws a tantrum after feeling neglected, she decides to punish him by walking away. A seemingly harmless punishment eventually becomes a pivotal childhood experience for Yang that will forever change him."
                     },
-                    "image": "files/images/editions/2023/photo8.webp",
+                    "image": "files/images/editions/2023/films/adty.webp",
                     "trailer": ""
                 },
                 {
-                    "title": "Naziv filma 3",
-                    "director": "Ime Prezime",
+                    "title": "BERLINER KINDL",
+                    "director": "Lucia Chicoș",
                     "country": {
-                        "sr": "Zemlja",
-                        "en": "Country"
+                        "sr": "Rumunija",
+                        "en": "Romania"
                     },
                     "year": 2023,
-                    "duration": 15,
+                    "duration": 0,
                     "synopsis": {
-                        "sr": "Ovde ide sinopsis filma.",
-                        "en": "Film synopsis goes here."
+                        "sr": "Tek što se iz Berlina vratila u prolećni Bukurešt, koji je zahvatila pandemija, Raluka počinje da radi kao dostavljačica. Njene vožnje biciklom kroz košmaran saobraćaj, uz momke koji joj dobacuju na svakom ćošku, postaju pomalo idilične kada upozna Dragoša, novog klijenta.",
+                        "en": "Freshly returned from Berlin to a spring-warm Bucharest hit by the pandemic, Raluca works as a delivery girl. Her bike rides through nightmarish traffic, with guys catcalling her on every street corner, turn slightly idyllic after encountering Dragoș, a new client."
                     },
-                    "image": "files/images/editions/2023/photo9.webp",
+                    "image": "files/images/editions/2023/films/berliner.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "CRACK OF DAWN",
+                    "director": "Anna Llargués",
+                    "country": {
+                        "sr": "Španija",
+                        "en": "Spain"
+                    },
+                    "year": 2023,
+                    "duration": 0,
+                    "synopsis": {
+                        "sr": "Seoska kuća jedne porodice proglašena je neuslovnom za život. Dok se deo porodice bori da sačuva prostor koji su podigli njihovi preci, mlađi zamišljaju kuda bi mogli da odu.",
+                        "en": "The farmhouse of a rural family is declared unfit for habitation. While part of the family fights to save the space their ancestors built, the younger ones imagine where they could go."
+                    },
+                    "image": "files/images/editions/2023/films/crack_of_dawn.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "DATSUN",
+                    "director": "Mark Albiston",
+                    "country": {
+                        "sr": "Novi Zeland",
+                        "en": "New Zealand"
+                    },
+                    "year": 2023,
+                    "duration": 0,
+                    "synopsis": {
+                        "sr": "Četrnaestogodišnji dečak, čija mama namerava da proda datsun njegovog preminulog oca, odluči da sa najboljim drugom i mlađim bratom krene u poslednju ludu vožnju.",
+                        "en": "A fourteen-year-old boy, whose Mum plans on selling his deceased Dad’s Datsun, decides to take his best friend and little brother on one last joyride."
+                    },
+                    "image": "files/images/editions/2023/films/datsun.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "DON VS LIGHTNING",
+                    "director": "Big Red Button",
+                    "country": {
+                        "sr": "Velika Britanija",
+                        "en": "UK"
+                    },
+                    "year": 2023,
+                    "duration": 0,
+                    "synopsis": {
+                        "sr": "Don želi samo miran život u škotskom visočju. Nažalost, univerzum ima drugačije planove.",
+                        "en": "All Don wants is a quiet life in the Scottish Highlands. Unfortunately the universe has other plans."
+                    },
+                    "image": "files/images/editions/2023/films/don_vs_lightning.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "FARAWAY FIELDS",
+                    "director": "Filip Jembrih",
+                    "country": {
+                        "sr": "Slovenija",
+                        "en": "Slovenia"
+                    },
+                    "year": 2023,
+                    "duration": 0,
+                    "synopsis": {
+                        "sr": "Žan, mladi francuski huligan, poslat je na prinudni odmor kod dede Evalda, koji živi na selu u Sloveniji.",
+                        "en": "Jean, a young French hooligan, is sent on a forced vacation to his grandfather Evald, who lives in the Slovenian countryside."
+                    },
+                    "image": "files/images/editions/2023/films/dnj.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "IT HAPPENED AT HOME",
+                    "director": "Apolline Pilley & Sydney Oberfeld",
+                    "country": {
+                        "sr": "Velika Britanija",
+                        "en": "UK"
+                    },
+                    "year": 2023,
+                    "duration": 0,
+                    "synopsis": {
+                        "sr": "Aja je mlada žena koja sa najboljom drugaricom Alis živi u prijatnom londonskom stanu – istom onom u kom je nedavno seksualno napadnuta. Kada je narušen njen odnos prema mestu koje joj je najsvetije i prema najintimnijim delovima nje same, Aja se hvata u koštac sa sivom zonom pristanka. Uz Alisinu tihu podršku, ponovo počinje da se oseća kao kod kuće.",
+                        "en": "Aya is a young woman who lives with her best friend Alice in a cozy London flat–the same flat where she was recently sexually assaulted. When Aya’s relationship to her most sacred space and intimate parts of herself are wounded, she grapples with the grey area around consent. With Alice’s quiet support, Aya starts to feel at home again."
+                    },
+                    "image": "files/images/editions/2023/films/ihah.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "JOŽA",
+                    "director": "Jan Krevatin",
+                    "country": {
+                        "sr": "Hrvatska",
+                        "en": "Croatia"
+                    },
+                    "year": 2023,
+                    "duration": 0,
+                    "synopsis": {
+                        "sr": "Ema je studentkinja prve godine glume. U kupovini sreće Jakova, već afirmisanog mladog glumca. Jakov ponudi da joj pomogne da snimi video-audiciju, pa se dogovore da se kasnije tog dana nađu kod nje. Dok je Ema uzbuđena što će dobiti savete od priznatog glumca, Jakov u tome vidi priliku za kratku avanturu.",
+                        "en": "Ema is a first-year acting student. While grocery shopping, she encounters Jakov, an already-established young actor. Jakov offers to help her with a self-tape audition and for that reason, they agree to meet at her place later that day. While Ema is excited to get acting advice from an acclaimed actor, Jakov sees this as an opportunity for a hook-up."
+                    },
+                    "image": "files/images/editions/2023/films/joza.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "LAPSE",
+                    "director": "Imogen Harrison",
+                    "country": {
+                        "sr": "Velika Britanija",
+                        "en": "UK"
+                    },
+                    "year": 2023,
+                    "duration": 0,
+                    "synopsis": {
+                        "sr": "Iscrpljeni kardiolog upušta se u avanturu za jednu noć sa nekim ko ne ume da odustane…",
+                        "en": "An exhausted cardiologist slips into a one night stand with someone who can’t let go..."
+                    },
+                    "image": "files/images/editions/2023/films/lapse.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "MAMA, I’M IN LOVE WITH PAMELA ANDERSON",
+                    "director": "Greta Griniute",
+                    "country": {
+                        "sr": "Litvanija",
+                        "en": "Lithuania"
+                    },
+                    "year": 2023,
+                    "duration": 0,
+                    "synopsis": {
+                        "sr": "Kada samohrana majka Marija otkrije da se njen sedmogodišnji sin Hoze zaljubio u Pamelu Anderson, upotrebiće svu svoju domišljatost da bi Pamela uzvratila.",
+                        "en": "When a single mother Maria discovers her seven-year-old son Jose has fallen in love with Pamela Anderson, she summons all her powers of invention to ensure Pamela responds."
+                    },
+                    "image": "files/images/editions/2023/films/mama.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "NOOR",
+                    "director": "Louka Hoogendijk",
+                    "country": {
+                        "sr": "Holandija",
+                        "en": "The Netherlands"
+                    },
+                    "year": 2023,
+                    "duration": 0,
+                    "synopsis": {
+                        "sr": "Nur putuje sa majkom na jedno ostrvo na severu, gde se okuplja cela porodica. Moraju da se oproste od nekoga dragog.",
+                        "en": "Noor travels with her mother to an island in the north, where a family gathering takes place. They have to say goodbye to someone dear."
+                    },
+                    "image": "files/images/editions/2023/films/noor.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "PATRIMONY",
+                    "director": "Stefan Tomić",
+                    "country": {
+                        "sr": "Bosna i Hercegovina",
+                        "en": "Bosnia and Herzegovina"
+                    },
+                    "year": 2023,
+                    "duration": 0,
+                    "synopsis": {
+                        "sr": "Otac i sin sreću se posle dvadeset godina ćutanja, ali neke rane vreme ne leči kada trenutak prođe.",
+                        "en": "Father and son meet after twenty years of silence, but some wounds time won't heal if the moment is gone."
+                    },
+                    "image": "files/images/editions/2023/films/patrimony.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "SHOULDERS",
+                    "director": "Tara Gajović",
+                    "country": {
+                        "sr": "Srbija",
+                        "en": "Serbia"
+                    },
+                    "year": 2023,
+                    "duration": 0,
+                    "synopsis": {
+                        "sr": "Majka i ćerka vraćaju se kući sa porodične proslave. Usput nailaze na ljude iz svoje prošlosti. Do kraja noći shvataju da ne znaju baš sve jedna o drugoj.",
+                        "en": "Mother and daughter are returning home after a family party. On the way home they come across people from their past. By the end of the night they realize they don’t know everything about each other."
+                    },
+                    "image": "files/images/editions/2023/films/shoulders.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "THE BEAST",
+                    "director": "Joris Laquittant",
+                    "country": {
+                        "sr": "Francuska",
+                        "en": "France"
+                    },
+                    "year": 2023,
+                    "duration": 0,
+                    "synopsis": {
+                        "sr": "Na raspustu kod porodice na selu, dečak iz grada primoran je da učestvuje u lovu na divlje svinje po kukuruzištima. Naivan i plašljiv, živi u stalnom strahu od tajanstvene zveri za koju odrasli kažu da živi u tom kraju.",
+                        "en": "On vacation on his family in the countryside, a young city boy is forced to participate in wild boar hunts in the cornfields. Naive and fearful, he lives in constant fear of a mysterious beast that adults say would live in the countryside."
+                    },
+                    "image": "files/images/editions/2023/films/beast.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "THE DEPENDENT VARIABLES",
+                    "director": "Lorenzo Tardella",
+                    "country": {
+                        "sr": "Italija",
+                        "en": "Italy"
+                    },
+                    "year": 2023,
+                    "duration": 0,
+                    "synopsis": {
+                        "sr": "Kada se detinjstvo zaista završava? I šta intimnost zapravo znači? Pjetro i Tomazo su na pragu tinejdžerskih godina. Upoznaju se u loži jednog pozorišta, dok oko njih odzvanja Vivaldijeva muzika. Da li je to prvi poljubac ili nešto drugo? Istog popodneva, okruženi tišinom kuće, pokušaće to da razumeju.",
+                        "en": "When does childhood really end? And what does intimacy truly mean? Pietro and Tommaso are at the gates of their teenage years. They meet in the lodge of a theater, while the notes of Vivaldi resonate around them. Is it a first kiss, or is it something else? That same afternoon, surrounded by the silence of the house, they will try to understand it."
+                    },
+                    "image": "files/images/editions/2023/films/dependent_variables.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "WHAT SHOULD I KNOW",
+                    "director": "Aleksej Guberinić",
+                    "country": {
+                        "sr": "Srbija",
+                        "en": "Serbia"
+                    },
+                    "year": 2023,
+                    "duration": 0,
+                    "synopsis": {
+                        "sr": "Dve mlade žene nose se sa ljubavlju, svaka na svoj neobičan način. Jednu partner izneveri, a druga izneveri svog partnera. Obe prolaze kroz traumu i nameću im se pitanja. Šta treba da znaju da bi spasle svoju ljubav?",
+                        "en": "Two young women are coping with love in their own, strange ways. One gets betrayed by her partner, and another betrays her partner. Both of them live through trauma, and questions arise. What should they know to be able to save their love?"
+                    },
+                    "image": "files/images/editions/2023/films/what_should_i_know.webp",
+                    "trailer": ""
+                },
+                {
+                    "title": "YOUR GUARDIAN",
+                    "director": "Mimi Vlaović",
+                    "country": {
+                        "sr": "Srbija",
+                        "en": "Serbia"
+                    },
+                    "year": 2023,
+                    "duration": 0,
+                    "synopsis": {
+                        "sr": "Beograd, 1992. Jugoslavija se raspada. Osećajući da se situacija samo zaoštrava, šta god da pričaju mediji, tek diplomirana Mina i njen dečko, kome samo što nije stigao poziv u vojsku, planiraju da te noći napuste zemlju.",
+                        "en": "Belgrade, 1992. Yugoslavia is falling apart. Sensing that the situation is only heating up, regardless of what the media says, freshly graduated Mina and her soon-to-be-recruited boyfriend plan to leave the country that night."
+                    },
+                    "image": "files/images/editions/2023/films/your_guardian.webp",
                     "trailer": ""
                 }
             ]

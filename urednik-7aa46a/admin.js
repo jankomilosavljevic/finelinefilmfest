@@ -69,6 +69,102 @@
         return out;
     };
 
+    // Otpremanje jednog fajla, uz procenat (za velike video fajlove)
+    const upload = (file, target, onProgress) => new Promise((resolve, reject) => {
+        const fd = new FormData();
+        fd.append('file', file);
+        fd.append('target', target);
+        const x = new XMLHttpRequest();
+        x.open('POST', 'api.php?action=upload');
+        x.setRequestHeader('X-CSRF', csrf);
+        x.upload.onprogress = e => { if (e.lengthComputable && onProgress) onProgress(e.loaded / e.total); };
+        x.onload = () => {
+            let out = {};
+            try { out = JSON.parse(x.responseText); } catch (e) {}
+            if (x.status === 401) { dirty = false; location.reload(); }
+            if (x.status < 300 && out.ok) resolve(out);
+            else reject(new Error(out.error || (x.status === 413 ? 'Fajl je prevelik za server.' : 'Greška pri otpremanju.')));
+        };
+        x.onerror = () => reject(new Error('Veza je prekinuta.'));
+        x.send(fd);
+    });
+
+    /* ---------- Mediji: spisak fajlova i gde se koriste ---------- */
+
+    let media = null;                         // { folders, files } sa servera
+    let mediaFolder = 'all';
+
+    const loadMedia = async () => (media = await api('media', { body: '1' }));
+    const fmtSize = b => b >= 1048576 ? `${(b / 1048576).toFixed(1).replace('.', ',')} MB` : `${Math.max(1, Math.round(b / 1024))} KB`;
+
+    // Sva mesta u podacima gde stoji tačno ova putanja
+    const findRefs = path => {
+        const refs = [];
+        const walk = (o, p) => {
+            if (o === path) refs.push(p);
+            else if (o && typeof o === 'object') Object.keys(o).forEach(k => walk(o[k], [...p, Array.isArray(o) ? Number(k) : k]));
+        };
+        walk(data, []);
+        return refs;
+    };
+
+    const refLabel = p => {
+        const k = p.join('.');
+        if (/^site\.hero\.images\.\d+$/.test(k)) return 'Karusel na početnoj';
+        if (k === 'site.event.venue.logo') return 'Logo mesta';
+        if (k === 'site.logo') return 'Logo festivala';
+        if (/^site\.team\.\d+\.photo$/.test(k)) return `Tim · ${get(data, p.slice(0, -1)).name || 'bez imena'}`;
+        if (/^selection\.years\.\d+\.films\.\d+\.image$/.test(k)) {
+            return `Selekcija ${get(data, p.slice(0, 3)).year} · ${get(data, p.slice(0, -1)).title || 'film bez naziva'}`;
+        }
+        return k;
+    };
+
+    // Ukloni putanju svuda: iz lista se izbacuje, u poljima ostaje prazno
+    const removeRefs = refs => {
+        [...refs].reverse().forEach(p => {
+            const parent = get(data, p.slice(0, -1));
+            const key = p[p.length - 1];
+            if (Array.isArray(parent)) parent.splice(key, 1);
+            else parent[key] = '';
+        });
+    };
+
+    // Prozor sa svim slikama iz Medija; klik bira sliku
+    const openPicker = ({ title, isSelected, onPick, multiple }) => {
+        const close = () => { overlay.remove(); removeEventListener('keydown', onKey); render(); };
+        const onKey = e => { if (e.key === 'Escape') close(); };
+        const body = h('div', { class: 'picker-body' }, h('p', { class: 'empty' }, 'Učitavam slike…'));
+        const overlay = h('div', { class: 'picker', onclick: e => { if (e.target === overlay) close(); } },
+            h('div', { class: 'picker-box' },
+                h('div', { class: 'picker-head' },
+                    h('h2', {}, title),
+                    h('button', { type: 'button', class: 'btn btn-primary', onclick: close }, multiple ? 'Gotovo' : 'Zatvori')),
+                body));
+        addEventListener('keydown', onKey);
+        document.body.append(overlay);
+
+        const fill = () => {
+            const images = media.files.filter(f => f.kind === 'image');
+            if (!images.length) return body.replaceChildren(h('p', { class: 'empty' }, 'Nema slika. Otpremi ih u „Mediji“.'));
+            const groups = [...new Set(images.map(f => f.folder))];
+            body.replaceChildren(...groups.map(g => h('div', { class: 'media-group' },
+                h('h3', {}, g),
+                h('div', { class: 'picker-grid' }, images.filter(f => f.folder === g).map(f => {
+                    const tile = h('button', { type: 'button', class: 'pick' + (isSelected(f.path) ? ' is-selected' : ''), title: f.name },
+                        h('img', { src: BASE + f.path, alt: '', loading: 'lazy' }),
+                        h('span', { class: 'pick-check' }, '✓'));
+                    tile.addEventListener('click', () => {
+                        onPick(f.path);
+                        if (!multiple) return close();
+                        tile.classList.toggle('is-selected', isSelected(f.path));
+                    });
+                    return tile;
+                })))));
+        };
+        (media ? Promise.resolve() : loadMedia()).then(fill).catch(e => { toast(e.message, true); close(); });
+    };
+
     /* ---------- Polja ---------- */
 
     // Jedno polje (tekst, broj, link, dugačak tekst)
@@ -108,17 +204,23 @@
             current ? h('img', { src: BASE + current, alt: '' }) : h('span', {}, 'Nema slike'));
         const file = h('input', { type: 'file', accept: 'image/jpeg,image/png,image/webp,image/gif', hidden: true });
         const pick = h('button', { type: 'button', class: 'btn', onclick: () => file.click() }, current ? 'Zameni sliku' : 'Izaberi sliku');
+        const fromMedia = h('button', {
+            type: 'button', class: 'btn',
+            onclick: () => openPicker({
+                title: label,
+                isSelected: p => get(data, path) === p,
+                onPick: p => { set(data, path, p); markDirty(); },
+            }),
+        }, 'Iz medija');
         const remove = current && h('button', { type: 'button', class: 'btn btn-ghost', onclick: () => { set(data, path, ''); markDirty(); render(); } }, 'Ukloni');
         file.addEventListener('change', async () => {
             if (!file.files[0]) return;
-            const fd = new FormData();
-            fd.append('file', file.files[0]);
-            fd.append('target', typeof target === 'function' ? target() : target);
             pick.disabled = true;
             pick.textContent = 'Otpremam…';
             try {
-                const out = await api('upload', { body: fd });
+                const out = await upload(file.files[0], typeof target === 'function' ? target() : target);
                 set(data, path, out.path);
+                media = null;                 // spisak medija je zastareo
                 markDirty();
                 render();
             } catch (e) {
@@ -129,19 +231,19 @@
         });
         return h('div', { class: 'field' },
             h('span', { class: 'field-label' }, label),
-            h('div', { class: 'img-field' }, preview, h('div', { class: 'img-actions' }, pick, remove, file)),
+            h('div', { class: 'img-field' }, preview, h('div', { class: 'img-actions' }, pick, fromMedia, remove, file)),
             hint && h('span', { class: 'field-hint' }, hint));
     };
 
     // Dugme za brisanje koje traži potvrdu (bez iskačućih prozora)
-    const confirmDelete = (text, onYes) => {
+    const confirmDelete = (text, onYes, question = 'Sigurno?') => {
         const wrap = h('span', { class: 'confirm' });
         const idle = () => {
             wrap.replaceChildren(h('button', { type: 'button', class: 'btn btn-ghost btn-danger', onclick: ask }, text));
         };
         const ask = () => {
             wrap.replaceChildren(
-                h('span', { class: 'confirm-q' }, 'Sigurno?'),
+                h('span', { class: 'confirm-q' }, typeof question === 'function' ? question() : question),
                 h('button', { type: 'button', class: 'btn btn-danger-solid', onclick: onYes }, 'Da, obriši'),
                 h('button', { type: 'button', class: 'btn btn-ghost', onclick: idle }, 'Ne'));
         };
@@ -285,10 +387,51 @@
                 }, `+ Dodaj film u ${y.year}`))];
     };
 
+    // Karusel na početnoj: izabrane slike + koliko dugo stoji svaka
+    const heroSection = () => {
+        if (!data.site.hero || typeof data.site.hero !== 'object') data.site.hero = { interval: 6, images: [] };
+        if (!Array.isArray(data.site.hero.images)) data.site.hero.images = [];
+        const imgs = data.site.hero.images;
+        const file = h('input', { type: 'file', accept: 'image/jpeg,image/png,image/webp,image/gif', multiple: true, hidden: true });
+        const up = h('button', { type: 'button', class: 'btn', onclick: () => file.click() }, 'Otpremi nove');
+        file.addEventListener('change', async () => {
+            const list = [...file.files];
+            up.disabled = true;
+            for (const [i, f] of list.entries()) {
+                up.textContent = `Otpremam ${i + 1}/${list.length}…`;
+                try { imgs.push((await upload(f, 'hero')).path); markDirty(); } catch (e) { toast(`${f.name}: ${e.message}`, true); }
+            }
+            media = null;
+            render();
+        });
+        return section('Karusel na početnoj',
+            h('p', { class: 'field-hint' }, 'Slike se smenjuju same. Na svakom ulasku na sajt redosled je nasumičan.'),
+            field('Koliko sekundi stoji svaka slika', ['site', 'hero', 'interval'], { type: 'number', hint: 'Najmanje 2 sekunde. Preporuka: 5–8.' }),
+            h('div', { class: 'field' },
+                h('span', { class: 'field-label' }, `Slike u karuselu (${imgs.length})`),
+                imgs.length
+                    ? h('div', { class: 'hero-grid' }, imgs.map((p, i) => h('div', { class: 'hero-tile' },
+                        h('img', { src: BASE + p, alt: '', loading: 'lazy' }),
+                        h('button', { type: 'button', class: 'hero-remove', title: 'Izbaci iz karusela', onclick: () => { imgs.splice(i, 1); markDirty(); render(); } }, '×'))))
+                    : h('p', { class: 'empty' }, 'Nijedna slika nije izabrana – početna je crna.'),
+                h('div', { class: 'img-actions' },
+                    h('button', {
+                        type: 'button', class: 'btn btn-primary',
+                        onclick: () => openPicker({
+                            title: 'Izaberi slike za karusel',
+                            multiple: true,
+                            isSelected: p => imgs.includes(p),
+                            onPick: p => { const i = imgs.indexOf(p); if (i < 0) imgs.push(p); else imgs.splice(i, 1); markDirty(); },
+                        }),
+                    }, 'Izaberi iz medija'),
+                    up, file)));
+    };
+
     views.event = () => [
         h('div', { class: 'view-head' },
-            h('h1', {}, 'Početna: datum i prijave'),
-            h('p', { class: 'lead' }, 'Ono što se vidi na prvom ekranu sajta, ispod slogana.')),
+            h('h1', {}, 'Početna'),
+            h('p', { class: 'lead' }, 'Prvi ekran sajta: slike u pozadini, datum, mesto i prijave.')),
+        heroSection(),
         section('Datum festivala',
             bi('Datum', ['site', 'event', 'dates'], { placeholder: 'npr. 12–14. jun 2026', hint: 'Piši tačno kako želiš da piše na sajtu.' })),
         section('Mesto održavanja',
@@ -348,6 +491,110 @@
                 blank: () => ({ name: '', role: { sr: '', en: '' }, photo: '' }),
             })),
     ];
+
+    views.media = () => {
+        const head = h('div', { class: 'view-head' },
+            h('h1', {}, 'Mediji'),
+            h('p', { class: 'lead' }, 'Sve slike i video snimci na sajtu. Za svaki fajl piše gde se koristi.'));
+        if (!media) {
+            loadMedia().then(() => { if (view === 'media') render(); }).catch(e => toast(e.message, true));
+            return [head, h('p', { class: 'empty' }, 'Učitavam…')];
+        }
+        const files = media.files;
+        if (mediaFolder !== 'all' && !media.folders.includes(mediaFolder)) mediaFolder = 'all';
+
+        /* --- Otpremanje --- */
+        const folderSel = h('select', {}, media.folders.map(f => h('option', { value: f }, f)));
+        folderSel.value = mediaFolder === 'all' ? 'images' : mediaFolder;
+        const sub = h('input', { type: 'text', placeholder: 'nova podfascikla (nije obavezno)' });
+        const file = h('input', { type: 'file', multiple: true, hidden: true, accept: 'image/jpeg,image/png,image/webp,image/gif,video/mp4,video/webm,video/quicktime,.mov' });
+        const progress = h('p', { class: 'field-hint' }, 'Slike: JPG, PNG, WEBP, GIF. Video: MP4, WEBM, MOV.');
+        const pickBtn = h('button', { type: 'button', class: 'btn btn-primary', onclick: () => file.click() }, 'Izaberi fajlove');
+
+        const send = async list => {
+            if (!list.length) return;
+            const name = sub.value.trim().toLowerCase()
+                .replace(/[šđčćž]/g, c => ({ š: 's', đ: 'dj', č: 'c', ć: 'c', ž: 'z' }[c]))
+                .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+            const target = folderSel.value + (name ? `/${name}` : '');
+            pickBtn.disabled = true;
+            let ok = 0;
+            for (const [i, f] of list.entries()) {
+                try {
+                    await upload(f, `folder:${target}`, p => { progress.textContent = `Otpremam ${i + 1}/${list.length} · ${f.name} · ${Math.round(p * 100)}%`; });
+                    ok++;
+                } catch (e) { toast(`${f.name}: ${e.message}`, true); }
+            }
+            mediaFolder = target;
+            await loadMedia().catch(() => {});
+            if (ok) toast(`Otpremljeno: ${ok}`);
+            render();
+        };
+        file.addEventListener('change', () => send([...file.files]));
+
+        const drop = h('div', { class: 'drop' },
+            h('p', { class: 'drop-title' }, 'Prevuci fajlove ovde'),
+            h('div', { class: 'drop-row' },
+                h('label', { class: 'inline' }, 'U fascikli ', folderSel),
+                h('span', { class: 'inline' }, '/'),
+                sub),
+            h('div', { class: 'img-actions' }, pickBtn, file),
+            progress);
+        drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('is-over'); });
+        drop.addEventListener('dragleave', () => drop.classList.remove('is-over'));
+        drop.addEventListener('drop', e => { e.preventDefault(); drop.classList.remove('is-over'); send([...e.dataTransfer.files]); });
+
+        /* --- Filter po fasciklama --- */
+        const count = f => files.filter(x => x.folder === f || x.folder.startsWith(f + '/')).length;
+        const chips = h('div', { class: 'chips' },
+            [['all', `Sve (${files.length})`], ...media.folders.map(f => [f, `${f} (${count(f)})`])].map(([v, t]) =>
+                h('button', { type: 'button', class: 'chip' + (mediaFolder === v ? ' is-active' : ''), onclick: () => { mediaFolder = v; render(); } }, t)));
+
+        /* --- Fajlovi --- */
+        const shown = mediaFolder === 'all' ? files : files.filter(x => x.folder === mediaFolder || x.folder.startsWith(mediaFolder + '/'));
+        const groups = [...new Set(shown.map(f => f.folder))];
+
+        const item = f => {
+            const refs = findRefs(f.path);
+            const uses = [...new Set(refs.map(refLabel))];
+            const thumb = f.kind === 'video'
+                ? h('video', { src: BASE + f.path + '#t=0.5', muted: true, preload: 'metadata', playsinline: true })
+                : h('img', { src: BASE + f.path, alt: '', loading: 'lazy' });
+            const question = () => {
+                const all = [...uses, ...f.code.map(c => `${c} (kod sajta)`)];
+                return all.length ? `Koristi se: ${all.join(', ')}. Obrisati svejedno${uses.length ? ' i ukloniti odatle' : ''}?` : 'Obrisati ovaj fajl?';
+            };
+            const del = async () => {
+                if (dirty) return toast('Prvo sačuvaj izmene, pa onda briši.', true);
+                try {
+                    await api('media-delete', { json: true, body: JSON.stringify({ path: f.path }) });
+                    media.files = media.files.filter(x => x !== f);
+                    const now = findRefs(f.path);
+                    if (now.length) { removeRefs(now); markDirty(); await save(); }
+                    toast('Obrisano.');
+                    render();
+                } catch (e) { toast(e.message, true); }
+            };
+            return h('div', { class: 'media-item' },
+                h('a', { class: 'media-thumb', href: BASE + f.path, target: '_blank', rel: 'noopener', title: 'Otvori u punoj veličini' },
+                    thumb, f.kind === 'video' && h('span', { class: 'media-badge' }, '▶ video')),
+                h('div', { class: 'media-info' },
+                    h('p', { class: 'media-name', title: f.name }, f.name),
+                    h('p', { class: 'media-meta' }, fmtSize(f.size)),
+                    uses.length
+                        ? h('p', { class: 'media-uses' }, uses.join(' · '))
+                        : h('p', { class: 'media-unused' }, 'Ne koristi se u adminu'),
+                    f.code.length > 0 && h('p', { class: 'media-code' }, `U kodu sajta: ${f.code.join(', ')}`)),
+                h('div', { class: 'media-actions' }, confirmDelete('Obriši', del, question)));
+        };
+
+        return [head, drop, chips,
+            ...(shown.length
+                ? groups.map(g => h('div', { class: 'media-group' },
+                    h('h3', {}, g, h('small', {}, ` · ${shown.filter(f => f.folder === g).length}`)),
+                    h('div', { class: 'media-grid' }, shown.filter(f => f.folder === g).map(item))))
+                : [h('p', { class: 'empty' }, 'U ovoj fascikli nema fajlova.')])];
+    };
 
     views.settings = () => {
         const cur = h('input', { type: 'password', autocomplete: 'current-password' });

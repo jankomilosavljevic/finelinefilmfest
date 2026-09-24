@@ -7,6 +7,6 @@ Options -Indexes
 </IfModule>
 
 # Pomoćni PHP fajlovi se ne otvaraju direktno
-<FilesMatch "^(lib|set-password)\.php$">
+<FilesMatch "^(lib\.php|set-password\.php|\.user\.ini)$">
     Require all denied
 </FilesMatch>
