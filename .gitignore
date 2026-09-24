@@ -1,0 +1,6 @@
+# Admin: šifra i zaključavanja ostaju samo na serveru
+urednik-7aa46a/_private/*
+!urednik-7aa46a/_private/.htaccess
+# Rezervne kopije koje pravi admin
+data/_backup/*
+!data/_backup/.htaccess

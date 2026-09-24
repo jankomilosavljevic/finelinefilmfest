@@ -1,0 +1,12 @@
+# Admin: ne indeksirati, PHP ulaz
+DirectoryIndex index.php
+Options -Indexes
+
+<IfModule mod_headers.c>
+    Header set X-Robots-Tag "noindex, nofollow"
+</IfModule>
+
+# Pomoćni PHP fajlovi se ne otvaraju direktno
+<FilesMatch "^(lib|set-password)\.php$">
+    Require all denied
+</FilesMatch>
