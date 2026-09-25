@@ -1,55 +1,860 @@
 {
     "years": [
         {
+            "year": 2026,
+            "films": [
+                {
+                    "title": "Bagarre",
+                    "director": "Sarah Narducci",
+                    "country": {
+                        "sr": "Italija",
+                        "en": "Italy"
+                    },
+                    "year": 2025,
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt43302860/"
+                },
+                {
+                    "title": "Cosmonauts",
+                    "director": "Leo Černic",
+                    "country": {
+                        "sr": "Slovenija, Italija",
+                        "en": "Slovenia, Italy"
+                    },
+                    "year": 2026,
+                    "duration": 14,
+                    "synopsis": {
+                        "en": "Lonely singles board a cruise through outer space, hoping to find love among the stars – a tender, funny and slightly absurd romance.",
+                        "sr": "Usamljeni samci kreću na krstarenje kroz svemir u nadi da će među zvezdama pronaći ljubav – nežna, duhovita i pomalo apsurdna romansa."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt39385928/"
+                },
+                {
+                    "title": "The Intimacy Coordinator",
+                    "director": "Louisa Connolly-Burnham",
+                    "country": {
+                        "sr": "Velika Britanija",
+                        "en": "UK"
+                    },
+                    "year": 2026,
+                    "duration": "",
+                    "synopsis": {
+                        "en": "Kate works as an intimacy coordinator on film sets. She is also struggling with sex addiction.",
+                        "sr": "Kejt radi kao koordinatorka intimnih scena na filmskim setovima. Istovremeno se bori sa zavisnošću od seksa."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt33991679/"
+                },
+                {
+                    "title": "Wild Sound",
+                    "director": "Théo Vincent-Suzzoni",
+                    "country": {
+                        "sr": "Francuska",
+                        "en": "France"
+                    },
+                    "year": 2025,
+                    "duration": 18,
+                    "synopsis": {
+                        "en": "Film student Stan spends a weekend at home with his father. Pretending he needs help recording sounds for a class assignment, he tries to reach a man who has gone silent in depression.",
+                        "sr": "Student filma Sten provodi vikend kod kuće sa ocem. Pod izgovorom da mu treba pomoć oko snimanja zvukova za zadatak na fakultetu, pokušava da dopre do čoveka koji se zatvorio u depresiju."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt39841125/"
+                },
+                {
+                    "title": "Dead Air",
+                    "director": "Andrej Haring",
+                    "country": {
+                        "sr": "Austrija",
+                        "en": "Austria"
+                    },
+                    "year": 2025,
+                    "duration": 15,
+                    "synopsis": {
+                        "en": "June 1991. As war breaks out in Yugoslavia, the Austrian army is sent to secure the border with Slovenia. At the national broadcaster, host Hannes Vlasic is about to report the news – until a phone call pressures the newsroom to censor it.",
+                        "sr": "Jun 1991. Dok u Jugoslaviji počinje rat, austrijska vojska dobija naređenje da obezbedi granicu sa Slovenijom. Na državnom radiju voditelj Hanes Vlasić treba da objavi vest, ali jedan telefonski poziv stavlja redakciju pod pritisak da je cenzuriše."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt40185268/"
+                },
+                {
+                    "title": "City Of Owls",
+                    "director": "Zhenia Kazankina",
+                    "country": {
+                        "sr": "Francuska, Italija, Nemačka",
+                        "en": "France, Italy, Germany"
+                    },
+                    "year": 2026,
+                    "duration": 13,
+                    "synopsis": {
+                        "en": "On her last evening before leaving, Vera puts her little sister to bed. Instead of telling her the real reason she is going away, she tells a bedtime story about a city swallowed by endless night.",
+                        "sr": "Poslednje večeri pred odlazak Vera uspavljuje mlađu sestru. Umesto da joj kaže pravi razlog odlaska, priča joj bajku o gradu koji je progutala večna noć."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt41858081/"
+                },
+                {
+                    "title": "Abracadabra",
+                    "director": "Amay Mehrishi",
+                    "country": {
+                        "sr": "Velika Britanija, Indija",
+                        "en": "UK, India"
+                    },
+                    "year": 2026,
+                    "duration": 20,
+                    "synopsis": {
+                        "en": "When his best friend chooses another seat on the school bus, Agastya is left alone with questions of identity, guilt and feelings he cannot put into words.",
+                        "sr": "Kada najbolji drug sedne na drugo mesto u školskom autobusu, Agastja ostaje sam sa pitanjima identiteta, krivice i osećanja koja ne ume da izgovori."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt39371314/"
+                },
+                {
+                    "title": "Banshee",
+                    "director": "Alexinho Mougeolle",
+                    "country": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "year": "",
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders"
+                },
+                {
+                    "title": "Primera Enseñanza",
+                    "director": "Aria Sánchez & Marina Meira",
+                    "country": {
+                        "sr": "Španija, Kuba",
+                        "en": "Spain, Cuba"
+                    },
+                    "year": 2025,
+                    "duration": 14,
+                    "synopsis": {
+                        "en": "Daniela has to rest her voice completely before she can use it again. While the adults fail to handle the situation, her classmates see a chance to silence her for good.",
+                        "sr": "Danijela mora potpuno da odmori glas pre nego što ponovo progovori. Dok odrasli ne znaju kako da se nose sa situacijom, njeni drugovi iz razreda vide priliku da je zauvek ućutkaju."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt37507386/"
+                },
+                {
+                    "title": "Housekeeper",
+                    "director": "Aaron Denolf",
+                    "country": {
+                        "sr": "Belgija",
+                        "en": "Belgium"
+                    },
+                    "year": 2025,
+                    "duration": 19,
+                    "synopsis": {
+                        "en": "A sensory portrait of a father and his family living displaced in an anonymous hotel, where his small daily routines become a fragile way of holding on to a sense of home.",
+                        "sr": "Čulni portret oca i njegove porodice koji, raseljeni, žive u anonimnoj hotelskoj sobi. Njegove male svakodnevne rutine postaju krhki način da sačuva osećaj doma."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt38190698/"
+                },
+                {
+                    "title": "Nobody Barks",
+                    "director": "Júlia Coldwell Serra",
+                    "country": {
+                        "sr": "Španija",
+                        "en": "Spain"
+                    },
+                    "year": 2025,
+                    "duration": 20,
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt38775535/"
+                },
+                {
+                    "title": "Typing…",
+                    "director": "Kaća Žarić",
+                    "country": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "year": "",
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan"
+                },
+                {
+                    "title": "Level 4",
+                    "director": "Nejc Hafner",
+                    "country": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "year": "",
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan"
+                },
+                {
+                    "title": "Nightcap",
+                    "director": "Djordje Vojvodić",
+                    "country": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "year": "",
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan"
+                },
+                {
+                    "title": "Cathedral",
+                    "director": "Uroš Lakić",
+                    "country": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "year": "",
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan"
+                },
+                {
+                    "title": "As If I’m Not There",
+                    "director": "Milica Vujasin",
+                    "country": {
+                        "sr": "Bosna i Hercegovina",
+                        "en": "Bosnia and Herzegovina"
+                    },
+                    "year": 2026,
+                    "duration": "",
+                    "synopsis": {
+                        "en": "On his last ride of the night, taxi driver Gojko picks up a woman who knows exactly where she is going. Mile by mile it becomes clear that he is carrying a burden that makes him question where he himself is headed.",
+                        "sr": "Tokom poslednje vožnje te noći, taksista Gojko preuzima putnicu koja tačno zna kuda ide. Kako kilometri prolaze, postaje jasno da i on nosi teret koji ga tera da se zapita kuda on zapravo ide."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan",
+                    "imdb": "https://www.imdb.com/title/tt38717884/"
+                },
+                {
+                    "title": "Healthy Hands",
+                    "director": "Stefan Tomić",
+                    "country": {
+                        "sr": "Bosna i Hercegovina",
+                        "en": "Bosnia and Herzegovina"
+                    },
+                    "year": "",
+                    "duration": 22,
+                    "synopsis": {
+                        "en": "Twelve-year-old swimming prodigy Vuk carries huge expectations ahead of the European Championship, while searching for a way to tell his parents he no longer wants to swim.",
+                        "sr": "Na dvanaestogodišnjem plivačkom talentu Vuku je ogroman pritisak pred Evropsko prvenstvo, a on traži način da roditeljima kaže da više ne želi da pliva."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan",
+                    "imdb": "https://www.imdb.com/title/tt42219839/"
+                },
+                {
+                    "title": "Wounds",
+                    "director": "Anže Grčar",
+                    "country": {
+                        "sr": "Slovenija",
+                        "en": "Slovenia"
+                    },
+                    "year": 2026,
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan",
+                    "imdb": "https://www.imdb.com/title/tt31474465/"
+                },
+                {
+                    "title": "Topa",
+                    "director": "Andrija Čurović",
+                    "country": {
+                        "sr": "Srbija",
+                        "en": "Serbia"
+                    },
+                    "year": 2025,
+                    "duration": 14,
+                    "synopsis": {
+                        "en": "After a nuclear disaster, young Mitar is forced to make hard choices, while his older sister Maja tries to give him courage and teach him the solidarity needed to survive in a post-apocalyptic world.",
+                        "sr": "Posle nuklearne katastrofe mali Mitar je primoran da donosi teške odluke, a starija sestra Maja pokušava da ga ohrabri i nauči solidarnosti bez koje se u postapokaliptičnom svetu ne preživljava."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan",
+                    "imdb": "https://www.imdb.com/title/tt35442201/"
+                },
+                {
+                    "title": "We Were Fine Weren’t We?",
+                    "director": "Nina Damjanović",
+                    "country": {
+                        "sr": "Hrvatska",
+                        "en": "Croatia"
+                    },
+                    "year": 2025,
+                    "duration": 19,
+                    "synopsis": {
+                        "en": "Luna and Nela (20) go to the seaside to celebrate their first anniversary. Instead of a carefree holiday, fears, jealousy and arguments reveal how fragile and complex their love is.",
+                        "sr": "Luna i Nela (20) odlaze na more da proslave prvu godišnjicu veze. Umesto bezbrižnog odmora, strahovi, ljubomora i svađe otkrivaju koliko je njihova ljubav krhka i složena."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan",
+                    "imdb": "https://www.imdb.com/title/tt39093544/"
+                },
+                {
+                    "title": "Welcome Home",
+                    "director": "Filip Jembrih",
+                    "country": {
+                        "sr": "Slovenija, Hrvatska",
+                        "en": "Slovenia, Croatia"
+                    },
+                    "year": 2025,
+                    "duration": 14,
+                    "synopsis": {
+                        "en": "Ten years after running away to Slovenia, Vera returns with her son Jan to her village in Croatian Zagorje. Her deeply religious mother demands that Jan be baptized before his grandfather's funeral, reopening old family wounds – while Jan finds his place among the local kids.",
+                        "sr": "Deset godina nakon što je pobegla u Sloveniju, Vera se sa sinom Janom vraća u rodno selo u hrvatskom Zagorju. Njena duboko religiozna majka traži da Jan bude kršten pre dedine sahrane, što otvara stare porodične rane – dok Jan pronalazi svoje mesto među decom iz sela."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan",
+                    "imdb": "https://www.imdb.com/title/tt25864596/"
+                },
+                {
+                    "title": "Upon Sunrise",
+                    "director": "Stefan Ivančić",
+                    "country": {
+                        "sr": "Srbija",
+                        "en": "Serbia"
+                    },
+                    "year": 2025,
+                    "duration": 14,
+                    "synopsis": {
+                        "en": "Crushed by the pressures of capitalism, a single mother turns to small scams to get by.",
+                        "sr": "Pod teretom kapitalizma, samohrana majka se snalazi sitnim prevarama kako bi preživela."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan",
+                    "imdb": "https://www.imdb.com/title/tt35405460/"
+                },
+                {
+                    "title": "Exam",
+                    "director": "Ljudmila Aleksandrovna Korobova",
+                    "country": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "year": "",
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan"
+                }
+            ],
+            "categories": [
+                {
+                    "id": "beyond-borders",
+                    "name": {
+                        "sr": "Beyond Borders",
+                        "en": "Beyond Borders"
+                    }
+                },
+                {
+                    "id": "made-in-balkan",
+                    "name": {
+                        "sr": "Made in Balkan",
+                        "en": "Made in Balkan"
+                    }
+                }
+            ]
+        },
+        {
             "year": 2025,
             "films": [
                 {
-                    "title": "Naziv filma 1",
-                    "director": "Ime Prezime",
+                    "title": "Dog And Wolf",
+                    "director": "Tereza Halamová",
                     "country": {
-                        "sr": "Zemlja",
-                        "en": "Country"
+                        "sr": "Češka",
+                        "en": "Czech Republic"
                     },
                     "year": 2025,
-                    "duration": 15,
+                    "duration": 20,
                     "synopsis": {
-                        "sr": "Ovde ide sinopsis filma.",
-                        "en": "Film synopsis goes here."
+                        "en": "Five male strippers on their yearly tour through the Czech Republic, Poland and Slovakia.",
+                        "sr": "Pet muških striptizeta na godišnjoj turneji kroz Češku, Poljsku i Slovačku."
                     },
-                    "image": "files/images/editions/2023/gallery/photo1.webp",
-                    "trailer": ""
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt21154782/"
                 },
                 {
-                    "title": "Naziv filma 2",
-                    "director": "Ime Prezime",
+                    "title": "A Bear Remembers",
+                    "director": "Zhang + Knight",
                     "country": {
-                        "sr": "Zemlja",
-                        "en": "Country"
+                        "sr": "",
+                        "en": ""
                     },
-                    "year": 2025,
-                    "duration": 15,
+                    "year": "",
+                    "duration": "",
                     "synopsis": {
-                        "sr": "Ovde ide sinopsis filma.",
-                        "en": "Film synopsis goes here."
+                        "sr": "",
+                        "en": ""
                     },
-                    "image": "files/images/editions/2023/gallery/photo2.webp",
-                    "trailer": ""
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders"
                 },
                 {
-                    "title": "Naziv filma 3",
-                    "director": "Ime Prezime",
+                    "title": "Love’s servant",
+                    "director": "Emanuela Muzzupappa",
                     "country": {
-                        "sr": "Zemlja",
-                        "en": "Country"
+                        "sr": "Italija",
+                        "en": "Italy"
+                    },
+                    "year": 2023,
+                    "duration": 18,
+                    "synopsis": {
+                        "en": "In a small town in southern Italy, a mother's prayer saves her daughter from death. In return, the girl must wear the habit of Saint Rita.",
+                        "sr": "U malom mestu na jugu Italije majčina molitva spasava ćerku od sigurne smrti. Zauzvrat, devojčica mora da nosi odoru Svete Rite."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt38689989/"
+                },
+                {
+                    "title": "A Dying Tree",
+                    "director": "Vincent René-Lortie",
+                    "country": {
+                        "sr": "Kanada",
+                        "en": "Canada"
                     },
                     "year": 2025,
+                    "duration": 16,
+                    "synopsis": {
+                        "en": "At the end of an ordinary day, a 45-year-old office worker meets the gaze of a chimpanzee. The silent exchange pushes him toward an irreversible decision.",
+                        "sr": "Na kraju običnog dana, četrdesetpetogodišnji službenik susreće pogled šimpanze. Ta nema razmena gura ga ka odluci od koje nema povratka."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt38579556/"
+                },
+                {
+                    "title": "Majonezë",
+                    "director": "Giulia Grandinetti",
+                    "country": {
+                        "sr": "Italija",
+                        "en": "Italy"
+                    },
+                    "year": 2024,
+                    "duration": 22,
+                    "synopsis": {
+                        "en": "In a remote Albanian mountain village, Elyria lives under the rule of her strict father. It becomes harder and harder to hide her anger – until one day the urge to rebel wins.",
+                        "sr": "U zabačenom planinskom selu u Albaniji, Elirija živi pod vlašću strogog oca. Sve teže krije bes koji raste u njoj, sve dok jednog dana želja za pobunom ne prevlada."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt27490157/"
+                },
+                {
+                    "title": "Skin on Skin",
+                    "director": "Simon Schneckenburger",
+                    "country": {
+                        "sr": "Nemačka",
+                        "en": "Germany"
+                    },
+                    "year": 2025,
+                    "duration": 30,
+                    "synopsis": {
+                        "en": "Two men lost in the brutal world of the German meat industry. Something grows between them – something that lets them dream again.",
+                        "sr": "Dva čoveka izgubljena u surovom svetu nemačke industrije mesa. Između njih se rađa nešto što im ponovo daje snagu da sanjaju."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt35198129/"
+                },
+                {
+                    "title": "God save the queen",
+                    "director": "Charlène Brimaud",
+                    "country": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "year": "",
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders"
+                },
+                {
+                    "title": "Sam & Lola",
+                    "director": "Mahaut Adam",
+                    "country": {
+                        "sr": "Francuska",
+                        "en": "France"
+                    },
+                    "year": 2024,
+                    "duration": 21,
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt37502845/"
+                },
+                {
+                    "title": "Barlebas",
+                    "director": "Malu Janssen",
+                    "country": {
+                        "sr": "Holandija",
+                        "en": "Netherlands"
+                    },
+                    "year": 2024,
+                    "duration": 20,
+                    "synopsis": {
+                        "en": "When headstrong Heylken (28) is accused of witchcraft, she fights back – and her free spirit and strong voice inspire young Griet (12).",
+                        "sr": "Kada tvrdoglavu Hejlken (28) optuže za veštičarenje, ona se ne predaje, a njen slobodni duh i snažan glas inspirišu mladu Grit (12)."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt26937588/"
+                },
+                {
+                    "title": "Permanent Life",
+                    "director": "Greta Griniute",
+                    "country": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "year": "",
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders"
+                },
+                {
+                    "title": "NEW",
+                    "director": "Zhenia Kazankina",
+                    "country": {
+                        "sr": "Rusija, Italija",
+                        "en": "Russia, Italy"
+                    },
+                    "year": 2024,
+                    "duration": 20,
+                    "synopsis": {
+                        "en": "On the outskirts of Moscow, a girl comes to a stranger's flat to look after a dog, only to realize the owner has vanished. She joins a line of people who have cared for the dog there for years, a strange community built around an absence.",
+                        "sr": "Na periferiji Moskve devojka dolazi u nepoznat stan da čuva psa i shvata da je vlasnik nestao. Postaje deo niza ljudi koji godinama brinu o psu u istom stanu – neobične zajednice okupljene oko jednog odsustva."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt31922147/"
+                },
+                {
+                    "title": "Boys",
+                    "director": "Anna Martí Domingo",
+                    "country": {
+                        "sr": "Španija",
+                        "en": "Spain"
+                    },
+                    "year": 2024,
                     "duration": 15,
                     "synopsis": {
-                        "sr": "Ovde ide sinopsis filma.",
-                        "en": "Film synopsis goes here."
+                        "sr": "",
+                        "en": ""
                     },
-                    "image": "files/images/editions/2023/gallery/photo3.webp",
-                    "trailer": ""
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt33513711/"
+                },
+                {
+                    "title": "THE EGGREGORES' THEORY",
+                    "director": "Andrea Gatopoulos",
+                    "country": {
+                        "sr": "Italija",
+                        "en": "Italy"
+                    },
+                    "year": 2024,
+                    "duration": 15,
+                    "synopsis": {
+                        "en": "He barely remembers that time – everything has faded like a painting left too long in the sun. Only one thing haunts him: a piece of music he cannot get out of his head.",
+                        "sr": "Tog vremena se jedva seća – sve je izbledelo kao slika predugo izložena svetlu. Muči ga samo jedno: muzika koju ne može da izbaci iz glave."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "beyond-borders",
+                    "imdb": "https://www.imdb.com/title/tt33023242/"
+                },
+                {
+                    "title": "Tarik",
+                    "director": "Adem Tutić",
+                    "country": {
+                        "sr": "Srbija",
+                        "en": "Serbia"
+                    },
+                    "year": 2025,
+                    "duration": 27,
+                    "synopsis": {
+                        "en": "Expelled from school in Lazarevac, Tarik has to leave his single mother Marija and move to Novi Pazar, to live with his father Safet and his new family.",
+                        "sr": "Posle izbacivanja iz škole u Lazarevcu, Tarik mora da napusti samohranu majku Mariju i preseli se u Novi Pazar, kod oca Safeta i njegove porodice."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan",
+                    "imdb": "https://www.imdb.com/title/tt38030953/"
+                },
+                {
+                    "title": "Thanks Enjoy!",
+                    "director": "Jovan Dopudj",
+                    "country": {
+                        "sr": "Srbija",
+                        "en": "Serbia"
+                    },
+                    "year": 2025,
+                    "duration": 14,
+                    "synopsis": {
+                        "en": "Lonely Žika (46), a toll booth worker forgotten by the system, faces his fears and finds new meaning in life when he meets Kiki (26), a watermelon seller.",
+                        "sr": "Usamljeni Žika (46), naplatničar putarine koga je sistem zaboravio, suočava se sa svojim strahovima i pronalazi novi smisao kada upozna Kiki (26), prodavačicu lubenica."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan",
+                    "imdb": "https://www.imdb.com/title/tt32262870/"
+                },
+                {
+                    "title": "Breathless",
+                    "director": "Marta Socha",
+                    "country": {
+                        "sr": "Poljska",
+                        "en": "Poland"
+                    },
+                    "year": 2024,
+                    "duration": 27,
+                    "synopsis": {
+                        "en": "Jana, a 24-year-old from Serbia with cystic fibrosis, asks a friend to film her last days with her family. Doctors doubt she will reach 25, and as a drug available in parts of the EU stays out of her reach, she fights on her own for the right to treatment abroad.",
+                        "sr": "Jana, dvadesetčetvorogodišnjakinja iz Srbije koja boluje od cistične fibroze, zamoli prijateljicu da snimi njene poslednje dane sa porodicom. Lekari sumnjaju da će doživeti 25. rođendan, a lek koji postoji u delu EU njoj nije dostupan – pa se sama bori za pravo na lečenje u inostranstvu."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan",
+                    "imdb": "https://www.imdb.com/title/tt33508571/"
+                },
+                {
+                    "title": "Solitarius",
+                    "director": "Julia Ernesti",
+                    "country": {
+                        "sr": "Srbija, Nemačka",
+                        "en": "Serbia, Germany"
+                    },
+                    "year": "",
+                    "duration": 23,
+                    "synopsis": {
+                        "en": "On the last day of shooting, a film director loses control of his set, his marriage and himself.",
+                        "sr": "Poslednjeg dana snimanja, reditelj gubi kontrolu nad setom, brakom i samim sobom."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan",
+                    "imdb": "https://www.imdb.com/title/tt34597962/"
+                },
+                {
+                    "title": "Bullet In The Rifle",
+                    "director": "Karmen Obrdalj",
+                    "country": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "year": "",
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan"
+                },
+                {
+                    "title": "Bull’s Eye",
+                    "director": "Petar Lakić",
+                    "country": {
+                        "sr": "Srbija",
+                        "en": "Serbia"
+                    },
+                    "year": 2024,
+                    "duration": 15,
+                    "synopsis": {
+                        "en": "Mateja and Beli are best friends. When Mateja starts dreaming of Beli as an S&M bull, their friendship quickly changes, and the secrets between them turn violent.",
+                        "sr": "Mateja i Beli su najbolji drugovi. Kada Mateja počne da sanja Belog kao S&M bika, njihovo prijateljstvo se naglo menja, a tajne između njih vode u nasilje."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan",
+                    "imdb": "https://www.imdb.com/title/tt35223104/"
+                },
+                {
+                    "title": "Joe",
+                    "director": "Vuk Radjen",
+                    "country": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "year": "",
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan"
+                },
+                {
+                    "title": "In Another Homeland",
+                    "director": "Maša Božić",
+                    "country": {
+                        "sr": "Belgija",
+                        "en": "Belgium"
+                    },
+                    "year": 2025,
+                    "duration": 11,
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan",
+                    "imdb": "https://www.imdb.com/title/tt38090478/"
+                },
+                {
+                    "title": "Duck Roast",
+                    "director": "Jelica Jerinić",
+                    "country": {
+                        "sr": "Finska",
+                        "en": "Finland"
+                    },
+                    "year": 2023,
+                    "duration": 12,
+                    "synopsis": {
+                        "en": "Young immigrant Mamu tries to win over Date, a Finnish woman, by cooking her dinner – but the main course turns out to be a bit too exotic for her taste.",
+                        "sr": "Mladi imigrant Mamu pokušava da osvoji Date, Finkinju, spremajući joj večeru – ali glavno jelo je za njen ukus ipak previše egzotično."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan",
+                    "imdb": "https://www.imdb.com/title/tt27932785/"
+                },
+                {
+                    "title": "Greek Apricots",
+                    "director": "Jan Krevatin",
+                    "country": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "year": "",
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "category": "made-in-balkan"
+                }
+            ],
+            "categories": [
+                {
+                    "id": "beyond-borders",
+                    "name": {
+                        "sr": "Beyond Borders",
+                        "en": "Beyond Borders"
+                    }
+                },
+                {
+                    "id": "made-in-balkan",
+                    "name": {
+                        "sr": "Made in Balkan",
+                        "en": "Made in Balkan"
+                    }
                 }
             ]
         },
@@ -57,52 +862,257 @@
             "year": 2024,
             "films": [
                 {
-                    "title": "Naziv filma 1",
-                    "director": "Ime Prezime",
+                    "title": "Pigeons are dying when the city is on fire",
+                    "director": "Stavros Markoulakis",
                     "country": {
-                        "sr": "Zemlja",
-                        "en": "Country"
+                        "sr": "Grčka, Holandija",
+                        "en": "Greece, Netherlands"
+                    },
+                    "year": 2023,
+                    "duration": 21,
+                    "synopsis": {
+                        "en": "Two boys meet on the hottest day of the year. Hours later, a pigeon gets trapped with them. In the heatwave, every living thing dreams of escaping the burning city.",
+                        "sr": "Dva dečaka upoznaju se najtoplijeg dana u godini. Nekoliko sati kasnije sa njima ostaje zarobljen golub. Usred toplotnog talasa, sva živa bića sanjaju bekstvo iz grada koji gori."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt28532048/"
+                },
+                {
+                    "title": "A Diary Of A Ghost",
+                    "director": "Caroline Hajny",
+                    "country": {
+                        "sr": "Velika Britanija",
+                        "en": "UK"
+                    },
+                    "year": 2024,
+                    "duration": 13,
+                    "synopsis": {
+                        "en": "After losing her first love, a young woman writes a diary to cope with her grief, until the line between reality and imagination begins to blur.",
+                        "sr": "Posle gubitka prve ljubavi, mlada žena piše dnevnik kako bi se izborila sa tugom, dok granica između stvarnosti i mašte počinje da bledi."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt31633677/"
+                },
+                {
+                    "title": "Three Women Named Svetlana",
+                    "director": "Natalia Boorsma",
+                    "country": {
+                        "sr": "Srbija",
+                        "en": "Serbia"
+                    },
+                    "year": 2024,
+                    "duration": "",
+                    "synopsis": {
+                        "en": "On a sunny spring day, three women, all named Svetlana, wait at a train station somewhere in southern Serbia.",
+                        "sr": "Jednog sunčanog prolećnog dana, tri žene koje se sve zovu Svetlana čekaju na železničkoj stanici negde na jugu Srbije."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt29274358/"
+                },
+                {
+                    "title": "Syncope",
+                    "director": "Linus Von Stumberg",
+                    "country": {
+                        "sr": "Švajcarska",
+                        "en": "Switzerland"
+                    },
+                    "year": 2023,
+                    "duration": 21,
+                    "synopsis": {
+                        "en": "Whim is cast in the dance piece SYNCOPE, which turns out to be a life-threatening spectacle.",
+                        "sr": "Vim dobija ulogu u plesnoj predstavi SYNCOPE, koja se pretvara u spektakl opasan po život."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt30257401/"
+                },
+                {
+                    "title": "We Should all be futurists",
+                    "director": "Angela Norelli",
+                    "country": {
+                        "sr": "Italija",
+                        "en": "Italy"
+                    },
+                    "year": 2023,
+                    "duration": 11,
+                    "synopsis": {
+                        "en": "Rosa shares a secret with her friend: Marinetti's mechanical man was never meant for all mankind, as the Futurists claimed. The film is made entirely by re-editing scenes from silent films.",
+                        "sr": "Roza otkriva prijateljici tajnu: Marinetijev mehanički čovek nikada nije bio zamišljen za celo čovečanstvo, kako su futuristi tvrdili. Film je u celosti napravljen novom montažom scena iz nemih filmova."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt28484619/"
+                },
+                {
+                    "title": "The Sea In Between",
+                    "director": "Lun Sevnik",
+                    "country": {
+                        "sr": "Slovenija, Češka, Hrvatska",
+                        "en": "Slovenia, Czech Republic, Croatia"
                     },
                     "year": 2024,
                     "duration": 15,
                     "synopsis": {
-                        "sr": "Ovde ide sinopsis filma.",
-                        "en": "Film synopsis goes here."
+                        "en": "Helping with the family business, a sullen teenager is stuck on a small boat with an older tourist. While he anxiously waits for his father to return with the catch, the tourist starts making lewd suggestions.",
+                        "sr": "Pomažući u porodičnom poslu, mrzovoljni tinejdžer ostaje zaglavljen na malom čamcu sa starijim turistom. Dok nestrpljivo čeka da se otac vrati sa ulovom, turista počinje da mu daje nepristojne predloge."
                     },
-                    "image": "files/images/editions/2023/gallery/photo4.webp",
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt30874073/"
+                },
+                {
+                    "title": "Empty Rooms",
+                    "director": "Zhenia Kazankina",
+                    "country": {
+                        "sr": "Rusija",
+                        "en": "Russia"
+                    },
+                    "year": 2023,
+                    "duration": "",
+                    "synopsis": {
+                        "en": "After the mass emigration from Russia, a moving love letter takes shape in the empty homes left behind by friends and family.",
+                        "sr": "Posle masovnog iseljavanja iz Rusije, u napuštenim domovima prijatelja i porodice nastaje dirljivo ljubavno pismo."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt28489971/"
+                },
+                {
+                    "title": "Leaf",
+                    "director": "Thom Lunshof",
+                    "country": {
+                        "sr": "Holandija",
+                        "en": "Netherlands"
+                    },
+                    "year": 2023,
+                    "duration": 20,
+                    "synopsis": {
+                        "en": "On a dry, deserted future Earth, mother Nora and son Sil set out to find one of the last green places. When Sil starts to transform physically in the merciless heat, Nora grows afraid of the nature waiting beyond the desert.",
+                        "sr": "Na suvoj i pustoj Zemlji budućnosti, majka Nora i sin Sil kreću u potragu za jednim od poslednjih zelenih staništa. Kada Sil na nemilosrdnoj vrućini počne čudno da se menja, Nora počinje da strahuje od prirode koja ih čeka s druge strane pustinje."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt28719677/"
+                },
+                {
+                    "title": "Happy Birthday To Us",
+                    "director": "Tamara Tasić",
+                    "country": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "year": "",
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
                     "trailer": ""
                 },
                 {
-                    "title": "Naziv filma 2",
-                    "director": "Ime Prezime",
+                    "title": "The Lost Memories Of Trees",
+                    "director": "Antonio La Camera",
                     "country": {
-                        "sr": "Zemlja",
-                        "en": "Country"
+                        "sr": "Španija, Italija",
+                        "en": "Spain, Italy"
                     },
-                    "year": 2024,
-                    "duration": 15,
+                    "year": 2023,
+                    "duration": 20,
                     "synopsis": {
-                        "sr": "Ovde ide sinopsis filma.",
-                        "en": "Film synopsis goes here."
+                        "en": "Deep in the Peruvian Amazon, two trees wake up at night and set off on a spiritual journey, discovering a past life in which they were two little brothers.",
+                        "sr": "Duboko u peruanskoj Amazoniji, dva drveta se noću bude i kreću na duhovno putovanje, otkrivajući prošli život u kome su bili dva mala brata."
                     },
-                    "image": "files/images/editions/2023/gallery/photo5.webp",
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt28484760/"
+                },
+                {
+                    "title": "If We Never Parted",
+                    "director": "Marc Esquirol Cano",
+                    "country": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "year": "",
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
                     "trailer": ""
                 },
                 {
-                    "title": "Naziv filma 3",
-                    "director": "Ime Prezime",
+                    "title": "The Generators",
+                    "director": "Georgie Cowan-Turner",
                     "country": {
-                        "sr": "Zemlja",
-                        "en": "Country"
+                        "sr": "Irska, Velika Britanija",
+                        "en": "Ireland, UK"
+                    },
+                    "year": 2024,
+                    "duration": 13,
+                    "synopsis": {
+                        "en": "In a future where energy credits are money, a man with an empty balance has no choice but to generate power with his own body to keep his sick husband's treatment running.",
+                        "sr": "U budućnosti u kojoj su energetski krediti novac, čovek sa praznim računom nema izbora nego da sopstvenim telom proizvodi struju kako bi održao lečenje bolesnog muža."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt28374905/"
+                },
+                {
+                    "title": "Homemaker",
+                    "director": "Ciara Kerr",
+                    "country": {
+                        "sr": "Velika Britanija",
+                        "en": "UK"
+                    },
+                    "year": 2023,
+                    "duration": 9,
+                    "synopsis": {
+                        "en": "Renee loses herself in a controlling relationship, and the abuse grows worse until she is completely trapped.",
+                        "sr": "Rene se gubi u vezi punoj kontrole, a zlostavljanje je sve gore dok ne ostane potpuno zarobljena."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt27238570/"
+                },
+                {
+                    "title": "The Game",
+                    "director": "Inga Sunagatullina",
+                    "country": {
+                        "sr": "Rusija",
+                        "en": "Russia"
                     },
                     "year": 2024,
                     "duration": 15,
                     "synopsis": {
-                        "sr": "Ovde ide sinopsis filma.",
-                        "en": "Film synopsis goes here."
+                        "sr": "",
+                        "en": ""
                     },
-                    "image": "files/images/editions/2023/gallery/photo6.webp",
-                    "trailer": ""
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt33742828/"
+                },
+                {
+                    "title": "Bye Bye Bowser",
+                    "director": "Jasmin Baumgartner",
+                    "country": {
+                        "sr": "Austrija",
+                        "en": "Austria"
+                    },
+                    "year": 2023,
+                    "duration": 20,
+                    "synopsis": {
+                        "en": "Luna rebels against the indifference of her artsy friends by writing a song about Laugo, the construction worker across the street. Can their romance survive the clash between comfortable neglect and working life?",
+                        "sr": "Luna se buni protiv ravnodušnosti svojih umetničkih prijatelja pišući pesmu o Laugu, građevinskom radniku preko puta. Da li će njihova romansa preživeti sudar sveta bezbrižnog bogatstva i sveta rada?"
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt30253429/"
                 }
             ]
         },
@@ -117,13 +1127,14 @@
                         "en": "Serbia"
                     },
                     "year": 2023,
-                    "duration": 0,
+                    "duration": 15,
                     "synopsis": {
                         "sr": "Tokom noći, tinejdžerka se taksijem vozi do susednog grada. Posle uznemirujuće vožnje i još gore noći na rođendanskoj žurci kod drugarice, primorana je da se kući vrati sa pretećim taksistom koji insistira da sedne napred, pored njega.",
                         "en": "During the night, a teenage girl is taking a taxi ride to the neighboring town. After a disturbing ride, and an even worse night at a friends birthday party, she is forced to return home with a menacing taxi driver who insists on her sitting in the front seat next to him."
                     },
                     "image": "files/images/editions/2023/films/530.webp",
-                    "trailer": ""
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt27620796/"
                 },
                 {
                     "title": "A DAY, THAT YEAR",
@@ -132,14 +1143,15 @@
                         "sr": "Tajvan",
                         "en": "Taiwan"
                     },
-                    "year": 2023,
-                    "duration": 0,
+                    "year": 2022,
+                    "duration": 9,
                     "synopsis": {
                         "sr": "Petogodišnji Jang provodi dan u kupovini sa majkom. Kada napravi scenu jer se oseća zapostavljeno, ona odluči da ga kazni tako što će otići od njega. Naizgled bezazlena kazna postaje presudno iskustvo iz detinjstva koje će Janga zauvek promeniti.",
                         "en": "5 years old Yang spends the day with his mother on a shopping trip. When he throws a tantrum after feeling neglected, she decides to punish him by walking away. A seemingly harmless punishment eventually becomes a pivotal childhood experience for Yang that will forever change him."
                     },
                     "image": "files/images/editions/2023/films/adty.webp",
-                    "trailer": ""
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt22261500/"
                 },
                 {
                     "title": "BERLINER KINDL",
@@ -148,14 +1160,15 @@
                         "sr": "Rumunija",
                         "en": "Romania"
                     },
-                    "year": 2023,
-                    "duration": 0,
+                    "year": 2022,
+                    "duration": 21,
                     "synopsis": {
                         "sr": "Tek što se iz Berlina vratila u prolećni Bukurešt, koji je zahvatila pandemija, Raluka počinje da radi kao dostavljačica. Njene vožnje biciklom kroz košmaran saobraćaj, uz momke koji joj dobacuju na svakom ćošku, postaju pomalo idilične kada upozna Dragoša, novog klijenta.",
                         "en": "Freshly returned from Berlin to a spring-warm Bucharest hit by the pandemic, Raluca works as a delivery girl. Her bike rides through nightmarish traffic, with guys catcalling her on every street corner, turn slightly idyllic after encountering Dragoș, a new client."
                     },
                     "image": "files/images/editions/2023/films/berliner.webp",
-                    "trailer": ""
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt29541322/"
                 },
                 {
                     "title": "CRACK OF DAWN",
@@ -165,13 +1178,14 @@
                         "en": "Spain"
                     },
                     "year": 2023,
-                    "duration": 0,
+                    "duration": 28,
                     "synopsis": {
                         "sr": "Seoska kuća jedne porodice proglašena je neuslovnom za život. Dok se deo porodice bori da sačuva prostor koji su podigli njihovi preci, mlađi zamišljaju kuda bi mogli da odu.",
                         "en": "The farmhouse of a rural family is declared unfit for habitation. While part of the family fights to save the space their ancestors built, the younger ones imagine where they could go."
                     },
                     "image": "files/images/editions/2023/films/crack_of_dawn.webp",
-                    "trailer": ""
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt27683671/"
                 },
                 {
                     "title": "DATSUN",
@@ -180,14 +1194,15 @@
                         "sr": "Novi Zeland",
                         "en": "New Zealand"
                     },
-                    "year": 2023,
-                    "duration": 0,
+                    "year": 2021,
+                    "duration": 15,
                     "synopsis": {
                         "sr": "Četrnaestogodišnji dečak, čija mama namerava da proda datsun njegovog preminulog oca, odluči da sa najboljim drugom i mlađim bratom krene u poslednju ludu vožnju.",
                         "en": "A fourteen-year-old boy, whose Mum plans on selling his deceased Dad’s Datsun, decides to take his best friend and little brother on one last joyride."
                     },
                     "image": "files/images/editions/2023/films/datsun.webp",
-                    "trailer": ""
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt17155290/"
                 },
                 {
                     "title": "DON VS LIGHTNING",
@@ -196,14 +1211,15 @@
                         "sr": "Velika Britanija",
                         "en": "UK"
                     },
-                    "year": 2023,
-                    "duration": 0,
+                    "year": 2021,
+                    "duration": 12,
                     "synopsis": {
                         "sr": "Don želi samo miran život u škotskom visočju. Nažalost, univerzum ima drugačije planove.",
                         "en": "All Don wants is a quiet life in the Scottish Highlands. Unfortunately the universe has other plans."
                     },
                     "image": "files/images/editions/2023/films/don_vs_lightning.webp",
-                    "trailer": ""
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt14873500/"
                 },
                 {
                     "title": "FARAWAY FIELDS",
@@ -212,14 +1228,15 @@
                         "sr": "Slovenija",
                         "en": "Slovenia"
                     },
-                    "year": 2023,
-                    "duration": 0,
+                    "year": 2022,
+                    "duration": 17,
                     "synopsis": {
                         "sr": "Žan, mladi francuski huligan, poslat je na prinudni odmor kod dede Evalda, koji živi na selu u Sloveniji.",
                         "en": "Jean, a young French hooligan, is sent on a forced vacation to his grandfather Evald, who lives in the Slovenian countryside."
                     },
                     "image": "files/images/editions/2023/films/dnj.webp",
-                    "trailer": ""
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt28650362/"
                 },
                 {
                     "title": "IT HAPPENED AT HOME",
@@ -228,14 +1245,15 @@
                         "sr": "Velika Britanija",
                         "en": "UK"
                     },
-                    "year": 2023,
+                    "year": 2022,
                     "duration": 0,
                     "synopsis": {
                         "sr": "Aja je mlada žena koja sa najboljom drugaricom Alis živi u prijatnom londonskom stanu – istom onom u kom je nedavno seksualno napadnuta. Kada je narušen njen odnos prema mestu koje joj je najsvetije i prema najintimnijim delovima nje same, Aja se hvata u koštac sa sivom zonom pristanka. Uz Alisinu tihu podršku, ponovo počinje da se oseća kao kod kuće.",
                         "en": "Aya is a young woman who lives with her best friend Alice in a cozy London flat–the same flat where she was recently sexually assaulted. When Aya’s relationship to her most sacred space and intimate parts of herself are wounded, she grapples with the grey area around consent. With Alice’s quiet support, Aya starts to feel at home again."
                     },
                     "image": "files/images/editions/2023/films/ihah.webp",
-                    "trailer": ""
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt21266464/"
                 },
                 {
                     "title": "JOŽA",
@@ -245,13 +1263,14 @@
                         "en": "Croatia"
                     },
                     "year": 2023,
-                    "duration": 0,
+                    "duration": 17,
                     "synopsis": {
                         "sr": "Ema je studentkinja prve godine glume. U kupovini sreće Jakova, već afirmisanog mladog glumca. Jakov ponudi da joj pomogne da snimi video-audiciju, pa se dogovore da se kasnije tog dana nađu kod nje. Dok je Ema uzbuđena što će dobiti savete od priznatog glumca, Jakov u tome vidi priliku za kratku avanturu.",
                         "en": "Ema is a first-year acting student. While grocery shopping, she encounters Jakov, an already-established young actor. Jakov offers to help her with a self-tape audition and for that reason, they agree to meet at her place later that day. While Ema is excited to get acting advice from an acclaimed actor, Jakov sees this as an opportunity for a hook-up."
                     },
                     "image": "files/images/editions/2023/films/joza.webp",
-                    "trailer": ""
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt29919305/"
                 },
                 {
                     "title": "LAPSE",
@@ -267,7 +1286,8 @@
                         "en": "An exhausted cardiologist slips into a one night stand with someone who can’t let go..."
                     },
                     "image": "files/images/editions/2023/films/lapse.webp",
-                    "trailer": ""
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt15509830/"
                 },
                 {
                     "title": "MAMA, I’M IN LOVE WITH PAMELA ANDERSON",
@@ -276,14 +1296,15 @@
                         "sr": "Litvanija",
                         "en": "Lithuania"
                     },
-                    "year": 2023,
-                    "duration": 0,
+                    "year": 2024,
+                    "duration": 10,
                     "synopsis": {
                         "sr": "Kada samohrana majka Marija otkrije da se njen sedmogodišnji sin Hoze zaljubio u Pamelu Anderson, upotrebiće svu svoju domišljatost da bi Pamela uzvratila.",
                         "en": "When a single mother Maria discovers her seven-year-old son Jose has fallen in love with Pamela Anderson, she summons all her powers of invention to ensure Pamela responds."
                     },
                     "image": "files/images/editions/2023/films/mama.webp",
-                    "trailer": ""
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt21874138/"
                 },
                 {
                     "title": "NOOR",
@@ -292,14 +1313,15 @@
                         "sr": "Holandija",
                         "en": "The Netherlands"
                     },
-                    "year": 2023,
-                    "duration": 0,
+                    "year": 2022,
+                    "duration": 16,
                     "synopsis": {
                         "sr": "Nur putuje sa majkom na jedno ostrvo na severu, gde se okuplja cela porodica. Moraju da se oproste od nekoga dragog.",
                         "en": "Noor travels with her mother to an island in the north, where a family gathering takes place. They have to say goodbye to someone dear."
                     },
                     "image": "files/images/editions/2023/films/noor.webp",
-                    "trailer": ""
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt36219220/"
                 },
                 {
                     "title": "PATRIMONY",
@@ -309,13 +1331,14 @@
                         "en": "Bosnia and Herzegovina"
                     },
                     "year": 2023,
-                    "duration": 0,
+                    "duration": 16,
                     "synopsis": {
                         "sr": "Otac i sin sreću se posle dvadeset godina ćutanja, ali neke rane vreme ne leči kada trenutak prođe.",
                         "en": "Father and son meet after twenty years of silence, but some wounds time won't heal if the moment is gone."
                     },
                     "image": "files/images/editions/2023/films/patrimony.webp",
-                    "trailer": ""
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt42475657/"
                 },
                 {
                     "title": "SHOULDERS",
@@ -341,13 +1364,14 @@
                         "en": "France"
                     },
                     "year": 2023,
-                    "duration": 0,
+                    "duration": 23,
                     "synopsis": {
                         "sr": "Na raspustu kod porodice na selu, dečak iz grada primoran je da učestvuje u lovu na divlje svinje po kukuruzištima. Naivan i plašljiv, živi u stalnom strahu od tajanstvene zveri za koju odrasli kažu da živi u tom kraju.",
                         "en": "On vacation on his family in the countryside, a young city boy is forced to participate in wild boar hunts in the cornfields. Naive and fearful, he lives in constant fear of a mysterious beast that adults say would live in the countryside."
                     },
                     "image": "files/images/editions/2023/films/beast.webp",
-                    "trailer": ""
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt25966888/"
                 },
                 {
                     "title": "THE DEPENDENT VARIABLES",
@@ -356,14 +1380,15 @@
                         "sr": "Italija",
                         "en": "Italy"
                     },
-                    "year": 2023,
-                    "duration": 0,
+                    "year": 2022,
+                    "duration": 16,
                     "synopsis": {
                         "sr": "Kada se detinjstvo zaista završava? I šta intimnost zapravo znači? Pjetro i Tomazo su na pragu tinejdžerskih godina. Upoznaju se u loži jednog pozorišta, dok oko njih odzvanja Vivaldijeva muzika. Da li je to prvi poljubac ili nešto drugo? Istog popodneva, okruženi tišinom kuće, pokušaće to da razumeju.",
                         "en": "When does childhood really end? And what does intimacy truly mean? Pietro and Tommaso are at the gates of their teenage years. They meet in the lodge of a theater, while the notes of Vivaldi resonate around them. Is it a first kiss, or is it something else? That same afternoon, surrounded by the silence of the house, they will try to understand it."
                     },
                     "image": "files/images/editions/2023/films/dependent_variables.webp",
-                    "trailer": ""
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt17155136/"
                 },
                 {
                     "title": "WHAT SHOULD I KNOW",
@@ -373,13 +1398,14 @@
                         "en": "Serbia"
                     },
                     "year": 2023,
-                    "duration": 0,
+                    "duration": 30,
                     "synopsis": {
                         "sr": "Dve mlade žene nose se sa ljubavlju, svaka na svoj neobičan način. Jednu partner izneveri, a druga izneveri svog partnera. Obe prolaze kroz traumu i nameću im se pitanja. Šta treba da znaju da bi spasle svoju ljubav?",
                         "en": "Two young women are coping with love in their own, strange ways. One gets betrayed by her partner, and another betrays her partner. Both of them live through trauma, and questions arise. What should they know to be able to save their love?"
                     },
                     "image": "files/images/editions/2023/films/what_should_i_know.webp",
-                    "trailer": ""
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt29025901/"
                 },
                 {
                     "title": "YOUR GUARDIAN",
@@ -388,14 +1414,238 @@
                         "sr": "Srbija",
                         "en": "Serbia"
                     },
-                    "year": 2023,
-                    "duration": 0,
+                    "year": 2022,
+                    "duration": 19,
                     "synopsis": {
                         "sr": "Beograd, 1992. Jugoslavija se raspada. Osećajući da se situacija samo zaoštrava, šta god da pričaju mediji, tek diplomirana Mina i njen dečko, kome samo što nije stigao poziv u vojsku, planiraju da te noći napuste zemlju.",
                         "en": "Belgrade, 1992. Yugoslavia is falling apart. Sensing that the situation is only heating up, regardless of what the media says, freshly graduated Mina and her soon-to-be-recruited boyfriend plan to leave the country that night."
                     },
                     "image": "files/images/editions/2023/films/your_guardian.webp",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt17047778/"
+                }
+            ]
+        },
+        {
+            "year": 2022,
+            "films": [
+                {
+                    "title": "Lion’s Cage",
+                    "director": "Linus Von Stumberg",
+                    "country": {
+                        "sr": "Švajcarska",
+                        "en": "Switzerland"
+                    },
+                    "year": 2022,
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "Da bi se oslobodila svoja dva makroa, Klea unajmljuje plaćenog ubicu, čiji plan vodi ka napetom ponovnom susretu.",
+                        "en": "To free herself from her two pimps, Klea hires a hitman whose assassination plan leads up to a tense reunion."
+                    },
+                    "image": "files/images/editions/2022/films/lionscage.jpg",
+                    "trailer": "https://www.youtube.com/watch?v=DkWag4Yu5xk",
+                    "imdb": "https://www.imdb.com/title/tt22801952/"
+                },
+                {
+                    "title": "Magpie",
+                    "director": "Carole Del Bono",
+                    "country": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "year": "",
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
                     "trailer": ""
+                },
+                {
+                    "title": "Lamblike",
+                    "director": "Jovan Dimoski",
+                    "country": {
+                        "sr": "Srbija",
+                        "en": "Serbia"
+                    },
+                    "year": 2022,
+                    "duration": 21,
+                    "synopsis": {
+                        "en": "Lukica is a teenager from a poor suburb. His friend Sara lives in a brick house and makes online pornography. When she goes to meet her new, older boyfriend, Lukica sets out to find them.",
+                        "sr": "Lukica je tinejdžer iz siromašnog predgrađa. Njegova drugarica Sara živi u kući od cigle i snima onlajn pornografiju. Kada ode na sastanak sa novim, starijim dečkom, Lukica kreće da ih pronađe."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt19363808/"
+                },
+                {
+                    "title": "Womenhunters",
+                    "director": "Lazar Aleksić, Alex Ivanović and Mirza Abdagić",
+                    "country": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "year": "",
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": ""
+                },
+                {
+                    "title": "You can stay here if you want",
+                    "director": "Sarah Rosen",
+                    "country": {
+                        "sr": "SAD",
+                        "en": "USA"
+                    },
+                    "year": 2022,
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt13964064/"
+                },
+                {
+                    "title": "Water Balloons",
+                    "director": "Aleksa Borković",
+                    "country": {
+                        "sr": "Srbija",
+                        "en": "Serbia"
+                    },
+                    "year": 2022,
+                    "duration": 13,
+                    "synopsis": {
+                        "en": "A ten-year-old boy spends the summer in his hometown. With no real friends, he is constantly teased and bullied by the other boys. His younger brother is the only one who truly cares – but that is not enough.",
+                        "sr": "Desetogodišnji dečak provodi leto u rodnom gradu. Bez pravih prijatelja, stalno trpi zadirkivanje i nasilje drugih dečaka. Mlađi brat je jedini kome je zaista stalo do njega, ali to nije dovoljno."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt21436590/"
+                },
+                {
+                    "title": "2030",
+                    "director": "David Champaigne",
+                    "country": {
+                        "sr": "Slovenija",
+                        "en": "Slovenia"
+                    },
+                    "year": 2022,
+                    "duration": 15,
+                    "synopsis": {
+                        "en": "Slovenia, 2030. While war spreads across the world, a totalitarian regime leaves no room for personal freedom. Young couple Kai and Maris try to escape during the night. Will they make it – and are we really free?",
+                        "sr": "Slovenija, 2030. Dok se rat širi svetom, totalitarni režim ne ostavlja nikakav prostor za ličnu slobodu. Mladi par, Kai i Maris, pokušava da pobegne tokom noći. Hoće li uspeti – i da li smo zaista slobodni?"
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt26450653/"
+                },
+                {
+                    "title": "Intermezzo",
+                    "director": "Višnja Sretenović",
+                    "country": {
+                        "sr": "Nemačka",
+                        "en": "Germany"
+                    },
+                    "year": 2022,
+                    "duration": 17,
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt26686799/"
+                },
+                {
+                    "title": "Gunz and Helmets",
+                    "director": "Marko Marjanović Marinčić",
+                    "country": {
+                        "sr": "Srbija",
+                        "en": "Serbia"
+                    },
+                    "year": 2021,
+                    "duration": 17,
+                    "synopsis": {
+                        "en": "While chasing success, director Beli and fashion designer Sakis find themselves accused of criminal activity by Inspector Stopić.",
+                        "sr": "Dok jure uspeh, reditelj Beli i modni dizajner Sakis nađu se pod optužbom inspektora Stopića da se bave kriminalom."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt15694484/"
+                },
+                {
+                    "title": "Alone",
+                    "director": "Borna Zidarić",
+                    "country": {
+                        "sr": "Hrvatska",
+                        "en": "Croatia"
+                    },
+                    "year": 2021,
+                    "duration": 18,
+                    "synopsis": {
+                        "en": "After someone breaks into her student apartment, Lana asks her father to come and visit. He keeps putting it off, while her fear slowly drives her up the wall.",
+                        "sr": "Kada joj neko provali u studentski stan, Lana zamoli oca da dođe. On stalno odlaže dolazak, a njen strah je polako izluđuje."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt16183154/"
+                },
+                {
+                    "title": "Reflection",
+                    "director": "Patrik Krajnc",
+                    "country": {
+                        "sr": "Slovenija",
+                        "en": "Slovenia"
+                    },
+                    "year": 2022,
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt26448821/"
+                },
+                {
+                    "title": "Darling",
+                    "director": "Danilo Pantović & Maša Djordjević",
+                    "country": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "year": "",
+                    "duration": "",
+                    "synopsis": {
+                        "sr": "",
+                        "en": ""
+                    },
+                    "image": "",
+                    "trailer": ""
+                },
+                {
+                    "title": "Good German Work",
+                    "director": "Jannis Alexander Kiefer",
+                    "country": {
+                        "sr": "Nemačka",
+                        "en": "Germany"
+                    },
+                    "year": 2020,
+                    "duration": 14,
+                    "synopsis": {
+                        "en": "Craftsmen Uli and Didi are building a swastika in their workshop, somewhere between rural idyll and village gloom, while wondering about the strange newcomers in the village.",
+                        "sr": "Majstori Uli i Didi prave kukasti krst u svojoj radionici, negde između seoske idile i seoskog sivila, i pitaju se ko su čudni pridošlice u selu."
+                    },
+                    "image": "",
+                    "trailer": "",
+                    "imdb": "https://www.imdb.com/title/tt15540052/"
                 }
             ]
         }

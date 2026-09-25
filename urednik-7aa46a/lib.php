@@ -232,7 +232,7 @@ function is_video_upload(array $upload): bool
 
 /**
  * Snima otpremljenu sliku u files/<folder> i vraća putanju kakvu sajt
- * koristi (npr. files/images/films/2025/naziv.webp).
+ * koristi (npr. files/images/editions/2025/films/naziv.webp).
  */
 function store_image(array $upload, string $folder): string
 {

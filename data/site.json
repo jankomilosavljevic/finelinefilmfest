@@ -5,11 +5,11 @@
         "interval": 6,
         "images": [
             "files/images/editions/2023/gallery/photo17.webp",
-            "files/images/editions/2026/TDP_8207.webp",
-            "files/images/editions/2026/TDP_7774.webp",
-            "files/images/editions/2026/TDP_7772.webp",
-            "files/images/editions/2026/TDP_7767.webp",
-            "files/images/editions/2026/TDP_7235.webp"
+            "files/images/editions/2026/gallery/TDP_8207.webp",
+            "files/images/editions/2026/gallery/TDP_7774.webp",
+            "files/images/editions/2026/gallery/TDP_7772.webp",
+            "files/images/editions/2026/gallery/TDP_7767.webp",
+            "files/images/editions/2026/gallery/TDP_7235.webp"
         ]
     },
     "event": {
@@ -108,7 +108,7 @@
                 "sr": "Direktor festivala",
                 "en": "Festival Director"
             },
-            "photo": "files/images/team/member-1.webp"
+            "photo": ""
         },
         {
             "name": "Ime Prezime",
@@ -116,7 +116,7 @@
                 "sr": "Umetnički direktor",
                 "en": "Artistic Director"
             },
-            "photo": "files/images/team/member-2.webp"
+            "photo": ""
         },
         {
             "name": "Ime Prezime",
@@ -124,7 +124,7 @@
                 "sr": "Selektor programa",
                 "en": "Programmer"
             },
-            "photo": "files/images/team/member-3.webp"
+            "photo": ""
         },
         {
             "name": "Ime Prezime",
@@ -132,7 +132,48 @@
                 "sr": "Producent",
                 "en": "Producer"
             },
-            "photo": "files/images/team/member-4.webp"
+            "photo": ""
         }
-    ]
+    ],
+    "gallery": {
+        "images": [
+            "files/images/editions/2026/gallery/232A9437.webp",
+            "files/images/editions/2023/gallery/photo7.webp",
+            "files/images/editions/2023/gallery/photo17.webp",
+            "files/images/editions/2023/gallery/photo10.webp",
+            "files/images/editions/2023/gallery/photo14.webp",
+            "files/images/editions/2023/gallery/photo13.webp",
+            "files/images/editions/2026/gallery/TDP_7181.webp",
+            "files/images/editions/2026/gallery/TDP_7126.webp",
+            "files/images/editions/2026/gallery/TDP_7752.webp",
+            "files/images/editions/2026/gallery/TDP_7737.webp",
+            "files/images/editions/2026/gallery/TDP_7774.webp",
+            "files/images/editions/2026/gallery/TDP_8153.webp",
+            "files/images/editions/2026/gallery/TDP_8168.webp",
+            "files/images/editions/2026/gallery/TDP_8207.webp",
+            "files/images/editions/2026/gallery/TDP_7930.webp",
+            "files/images/editions/2026/gallery/TDP_7767.webp",
+            "files/images/editions/2026/gallery/TDP_7941.webp",
+            "files/images/editions/2026/gallery/TDP_7188.webp",
+            "files/images/editions/2026/gallery/TDP_7235.webp",
+            "files/images/editions/2026/gallery/TDP_8032.webp",
+            "files/images/editions/2026/gallery/TDP_8033.webp",
+            "files/images/editions/2026/gallery/TDP_7772.webp",
+            "files/images/editions/2026/gallery/TDP_7736.webp",
+            "files/images/editions/2026/gallery/TDP_8077.webp",
+            "files/images/editions/2023/gallery/photo5.webp",
+            "files/images/editions/2023/gallery/photo4.webp",
+            "files/images/editions/2023/gallery/photo15.webp",
+            "files/images/editions/2023/gallery/photo3.webp",
+            "files/images/editions/2023/gallery/photo2.webp",
+            "files/images/editions/2023/gallery/photo12.webp",
+            "files/images/editions/2023/gallery/photo11.webp",
+            "files/images/editions/2023/gallery/photo18.webp",
+            "files/images/editions/2023/gallery/photo8.webp",
+            "files/images/editions/2023/gallery/photo9.webp",
+            "files/images/editions/2023/gallery/photo6.webp",
+            "files/images/editions/2023/gallery/photo16.webp",
+            "files/images/editions/2023/gallery/photo1.webp"
+        ]
+    }
 }

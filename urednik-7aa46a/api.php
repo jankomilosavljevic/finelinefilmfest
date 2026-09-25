@@ -46,6 +46,11 @@ try {
                 $seen[$year] = true;
                 $sel['years'][$i]['year'] = $year;
                 $sel['years'][$i]['films'] = array_values(is_array($y['films'] ?? null) ? $y['films'] : []);
+                // kategorije su opcione; bez njih godina se prikazuje kao do sad
+                $cats = array_values(array_filter(is_array($y['categories'] ?? null) ? $y['categories'] : [],
+                    fn($c) => is_array($c) && is_string($c['id'] ?? null) && $c['id'] !== ''));
+                if ($cats) $sel['years'][$i]['categories'] = $cats;
+                else unset($sel['years'][$i]['categories']);
             }
             // najnovija godina uvek prva (sajt je prikazuje podrazumevano)
             usort($sel['years'], fn($a, $b) => $b['year'] <=> $a['year']);
@@ -57,10 +62,11 @@ try {
             if (empty($_FILES) && (int) ($_SERVER['CONTENT_LENGTH'] ?? 0) > 0) reply(['error' => 'Fajl je prevelik za server.'], 413);
             $target = (string) ($_POST['target'] ?? '');
             $file = $_FILES['file'] ?? [];
-            if (preg_match('/^film:(\d{4})$/', $target, $m)) $folder = 'images/films/' . $m[1];
+            // slike idu u files/images/editions/<godina>/films i …/gallery
+            if (preg_match('/^film:(\d{4})$/', $target, $m)) $folder = 'images/editions/' . $m[1] . '/films';
             elseif ($target === 'venue') $folder = 'images/venues';
             elseif ($target === 'team')  $folder = 'images/team';
-            elseif ($target === 'hero')  $folder = 'images/hero';
+            elseif ($target === 'hero' || $target === 'gallery') $folder = 'images/editions/' . date('Y') . '/gallery';
             elseif (str_starts_with($target, 'folder:')) $folder = substr($target, 7);   // iz Medija
             else reply(['error' => 'Nepoznato mesto za fajl.'], 400);
             $video = is_video_upload($file);

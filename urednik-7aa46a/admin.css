@@ -147,6 +147,13 @@ input::placeholder, textarea::placeholder { color: rgba(245, 245, 245, .3); }
 .year-tools { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .inline { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
 
+/* Kategorije u okviru godine */
+.cats { display: grid; gap: 10px; padding: 16px; border: 1px solid var(--line); border-radius: 8px; }
+.cats h3, .films-title { margin: 0; font-size: 15px; font-weight: 700; }
+.films-title { margin-top: 6px; }
+.cat-card .card-title small { font-size: 13px; font-weight: 400; color: var(--muted); }
+.cat-select { padding: 6px 8px; font-size: 13px; max-width: 170px; }
+
 /* ---------- Kartice (filmovi, tim, stubovi…) ---------- */
 .list { display: grid; gap: 10px; }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 8px; }
@@ -189,6 +196,16 @@ input::placeholder, textarea::placeholder { color: rgba(245, 245, 245, .3); }
 
 .block > .field > input[type="number"] { max-width: 200px; }
 .hero-grid + .img-actions, .empty + .img-actions { margin-top: 8px; }
+
+/* Galerija: redni broj, strelice za redosled, prevlačenje */
+.gallery-tile { cursor: grab; }
+.gallery-tile.is-drag { opacity: .35; }
+.gallery-tile.is-over { outline: 2px solid var(--text); outline-offset: -2px; }
+.gallery-num { position: absolute; left: 6px; top: 6px; min-width: 24px; padding: 2px 6px; border-radius: 4px; background: rgba(0, 0, 0, .75); font-size: 12px; font-weight: 700; text-align: center; }
+.gallery-move { position: absolute; left: 6px; bottom: 6px; display: flex; gap: 4px; }
+.gallery-move button { width: 28px; height: 26px; border-radius: 4px; background: rgba(0, 0, 0, .75); font-size: 14px; }
+.gallery-move button:hover:not(:disabled) { background: var(--text); color: #000; }
+.gallery-move button:disabled { opacity: .3; cursor: default; }
 
 /* ---------- Izbor slika (prozor) ---------- */
 .picker { position: fixed; inset: 0; z-index: 30; display: grid; place-items: center; padding: 24px; background: rgba(0, 0, 0, .8); }

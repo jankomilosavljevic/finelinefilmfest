@@ -111,6 +111,7 @@
     const refLabel = p => {
         const k = p.join('.');
         if (/^site\.hero\.images\.\d+$/.test(k)) return 'Karusel na početnoj';
+        if (/^site\.gallery\.images\.\d+$/.test(k)) return 'Galerija';
         if (k === 'site.event.venue.logo') return 'Logo mesta';
         if (k === 'site.logo') return 'Logo festivala';
         if (/^site\.team\.\d+\.photo$/.test(k)) return `Tim · ${get(data, p.slice(0, -1)).name || 'bez imena'}`;
@@ -322,6 +323,56 @@
         const y = years[yearIdx];
         const films = y.films;
         const yearPath = ['selection', 'years', yearIdx];
+        if (!Array.isArray(y.categories)) y.categories = [];
+        const cats = y.categories;
+        const catName = c => (c.name && (c.name.sr || c.name.en)) || 'Kategorija bez naziva';
+
+        // Kategorija filma: padajuća lista (samo ako godina ima kategorije)
+        const catSelect = (f, compact) => {
+            const sel = h('select', { class: compact ? 'cat-select' : null, title: 'Kategorija' },
+                h('option', { value: '' }, '— bez kategorije —'),
+                cats.map(c => h('option', { value: c.id }, catName(c))));
+            sel.value = cats.some(c => c.id === f.category) ? f.category : '';
+            sel.addEventListener('change', () => {
+                if (sel.value) f.category = sel.value; else delete f.category;
+                markDirty();
+                render();
+            });
+            return sel;
+        };
+
+        const newCatId = () => {
+            let id;
+            do id = 'k' + Math.random().toString(36).slice(2, 8); while (cats.some(c => c.id === id));
+            return id;
+        };
+
+        const catsBlock = h('div', { class: 'cats' },
+            h('h3', {}, 'Kategorije'),
+            h('p', { class: 'field-hint' }, cats.length
+                ? 'Na sajtu se ova godina deli na kategorije, redom kao ovde. Svakom filmu izaberi kategoriju. Filmovi bez kategorije idu na kraj, pod „Ostalo“.'
+                : 'Ova godina nema kategorije – filmovi se prikazuju svi zajedno. Dodaj kategoriju ako selekciju treba podeliti (npr. Beyond Borders, Made in Balkan).'),
+            cats.length > 0 && h('div', { class: 'list' }, cats.map((c, i) => {
+                const n = films.filter(f => f.category === c.id).length;
+                return h('div', { class: 'card cat-card' },
+                    h('div', { class: 'card-head' },
+                        h('span', { class: 'card-num' }, String(i + 1).padStart(2, '0')),
+                        h('span', { class: 'card-title' }, catName(c), h('small', {}, ` · ${filmsLabel(n)}`)),
+                        h('span', { class: 'card-tools' },
+                            h('button', { type: 'button', class: 'btn btn-icon', title: 'Pomeri gore', disabled: i === 0, onclick: () => move(cats, i, -1) && render() }, '↑'),
+                            h('button', { type: 'button', class: 'btn btn-icon', title: 'Pomeri dole', disabled: i === cats.length - 1, onclick: () => move(cats, i, 1) && render() }, '↓'),
+                            confirmDelete('Obriši', () => {
+                                films.forEach(f => { if (f.category === c.id) delete f.category; });
+                                cats.splice(i, 1);
+                                markDirty();
+                                render();
+                            }, n ? `${filmsLabel(n)} ostaje bez kategorije. Obrisati?` : 'Sigurno?'))),
+                    h('div', { class: 'card-body' }, bi('Naziv kategorije', [...yearPath, 'categories', i, 'name'])));
+            })),
+            h('button', {
+                type: 'button', class: 'btn btn-add',
+                onclick: () => { cats.push({ id: newCatId(), name: { sr: '', en: '' } }); markDirty(); render(); },
+            }, '+ Dodaj kategoriju'));
 
         const filmCard = (f, i) => {
             const open = i === openFilm;
@@ -336,6 +387,7 @@
                             h('strong', {}, f.title || 'Novi film'),
                             h('span', {}, f.director || 'Režija nije upisana'))),
                     h('span', { class: 'card-tools' },
+                        cats.length > 0 && catSelect(f, true),
                         h('button', { type: 'button', class: 'btn btn-icon', title: 'Pomeri gore', disabled: i === 0, onclick: () => { if (move(films, i, -1)) { openFilm = -1; render(); } } }, '↑'),
                         h('button', { type: 'button', class: 'btn btn-icon', title: 'Pomeri dole', disabled: i === films.length - 1, onclick: () => { if (move(films, i, 1)) { openFilm = -1; render(); } } }, '↓'),
                         h('button', { type: 'button', class: 'btn', onclick: () => { openFilm = open ? -1 : i; render(); } }, open ? 'Zatvori' : 'Izmeni'))),
@@ -343,6 +395,7 @@
                     h('div', { class: 'grid-2' },
                         field('Naziv filma', [...p, 'title']),
                         field('Režija', [...p, 'director'])),
+                    cats.length > 0 && h('label', { class: 'field' }, h('span', { class: 'field-label' }, 'Kategorija'), catSelect(f, false)),
                     bi('Zemlja', [...p, 'country']),
                     h('div', { class: 'grid-2' },
                         field('Godina filma', [...p, 'year'], { type: 'number' }),
@@ -375,6 +428,8 @@
                     h('div', { class: 'year-tools' },
                         h('label', { class: 'inline' }, 'Promeni godinu ', yearInput),
                         confirmDelete(`Obriši ${y.year}. godinu`, () => { years.splice(yearIdx, 1); yearIdx = 0; markDirty(); render(); }))),
+                catsBlock,
+                h('h3', { class: 'films-title' }, 'Filmovi'),
                 films.length ? h('div', { class: 'list' }, films.map(filmCard)) : h('p', { class: 'empty' }, 'Ova godina još nema filmova.'),
                 h('button', {
                     type: 'button', class: 'btn btn-add',
@@ -442,6 +497,73 @@
         section('Slogan',
             bi('Slogan', ['site', 'tagline'])),
     ];
+
+    // Galerija na dnu početne: izabrane slike, redosled je isti kao ovde
+    views.gallery = () => {
+        if (!data.site.gallery || typeof data.site.gallery !== 'object') data.site.gallery = { images: [] };
+        if (!Array.isArray(data.site.gallery.images)) data.site.gallery.images = [];
+        const imgs = data.site.gallery.images;
+
+        const file = h('input', { type: 'file', accept: 'image/jpeg,image/png,image/webp,image/gif', multiple: true, hidden: true });
+        const up = h('button', { type: 'button', class: 'btn', onclick: () => file.click() }, 'Otpremi nove');
+        file.addEventListener('change', async () => {
+            const list = [...file.files];
+            up.disabled = true;
+            for (const [i, f] of list.entries()) {
+                up.textContent = `Otpremam ${i + 1}/${list.length}…`;
+                try { imgs.push((await upload(f, 'gallery')).path); markDirty(); } catch (e) { toast(`${f.name}: ${e.message}`, true); }
+            }
+            media = null;
+            render();
+        });
+
+        // Prevlačenje mišem menja redosled; strelice rade i na telefonu
+        let dragFrom = -1;
+        const moveTo = (from, to) => {
+            if (from === to || from < 0 || to < 0 || to >= imgs.length) return;
+            imgs.splice(to, 0, imgs.splice(from, 1)[0]);
+            markDirty();
+            render();
+        };
+        const tile = (p, i) => {
+            const el = h('div', { class: 'hero-tile gallery-tile', draggable: 'true' },
+                h('img', { src: BASE + p, alt: '', loading: 'lazy', draggable: 'false' }),
+                h('span', { class: 'gallery-num' }, String(i + 1)),
+                h('button', { type: 'button', class: 'hero-remove', title: 'Izbaci iz galerije', onclick: () => { imgs.splice(i, 1); markDirty(); render(); } }, '×'),
+                h('span', { class: 'gallery-move' },
+                    h('button', { type: 'button', title: 'Pomeri levo', disabled: i === 0, onclick: () => moveTo(i, i - 1) }, '←'),
+                    h('button', { type: 'button', title: 'Pomeri desno', disabled: i === imgs.length - 1, onclick: () => moveTo(i, i + 1) }, '→')));
+            el.addEventListener('dragstart', e => { dragFrom = i; el.classList.add('is-drag'); e.dataTransfer.effectAllowed = 'move'; e.dataTransfer.setData('text/plain', String(i)); });
+            el.addEventListener('dragend', () => el.classList.remove('is-drag'));
+            el.addEventListener('dragover', e => { e.preventDefault(); el.classList.add('is-over'); });
+            el.addEventListener('dragleave', () => el.classList.remove('is-over'));
+            el.addEventListener('drop', e => { e.preventDefault(); el.classList.remove('is-over'); moveTo(dragFrom, i); });
+            return el;
+        };
+
+        return [
+            h('div', { class: 'view-head' },
+                h('h1', {}, 'Galerija'),
+                h('p', { class: 'lead' }, 'Traka sa fotografijama na dnu početne strane. Vrti se sama, redom kao ovde.')),
+            section(`Slike u galeriji (${imgs.length})`,
+                h('p', { class: 'field-hint' }, 'Redosled menjaš prevlačenjem slike mišem ili strelicama ← →.'),
+                imgs.length
+                    ? h('div', { class: 'hero-grid' }, imgs.map(tile))
+                    : h('p', { class: 'empty' }, 'Galerija je prazna – na sajtu se ne prikazuje.'),
+                h('div', { class: 'img-actions' },
+                    h('button', {
+                        type: 'button', class: 'btn btn-primary',
+                        onclick: () => openPicker({
+                            title: 'Izaberi slike za galeriju',
+                            multiple: true,
+                            isSelected: p => imgs.includes(p),
+                            onPick: p => { const i = imgs.indexOf(p); if (i < 0) imgs.push(p); else imgs.splice(i, 1); markDirty(); },
+                        }),
+                    }, 'Izaberi iz medija'),
+                    up, file,
+                    imgs.length > 0 && confirmDelete('Isprazni galeriju', () => { imgs.length = 0; markDirty(); render(); }))),
+        ];
+    };
 
     views.contact = () => [
         h('div', { class: 'view-head' }, h('h1', {}, 'Kontakt i mreže')),

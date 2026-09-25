@@ -5,9 +5,11 @@
     const root = document.documentElement;
     const header = $('.site-header');
     const main = $('main');
-    const sections = $$('main > section');
+    // sekcije koje se vide (galerija se sakriva ako nema slika)
+    let sections = $$('main > section:not([hidden])');
     const toggle = $('.menu-toggle');
     const modal = $('[data-modal]');
+    const lightbox = $('[data-lightbox]');
 
     let lang = 'en';
     let site = null;          // data/site.json
@@ -17,7 +19,8 @@
     const tr = v => (v && typeof v === 'object') ? (v[lang] || v.sr || v.en || '') : (v ?? '');
     const menuOpen = () => document.body.classList.contains('menu-open');
     const modalOpen = () => modal && !modal.hidden;
-    const busy = () => menuOpen() || modalOpen();
+    const lightboxOpen = () => lightbox && !lightbox.hidden;
+    const busy = () => menuOpen() || modalOpen() || lightboxOpen();
 
     /* ======================================================================
        Skrol po ekranima: jedan potez točkića / swipe / taster = jedna sekcija.
@@ -30,7 +33,7 @@
     let enabled = false;
     let locked = false;
     let lastWheel = 0;
-    // Telefon/tablet: ugrađeni skrol + CSS scroll-snap (glatko, bez seckanja)
+    // Telefon/tablet: običan skrol telefona, bez ikakvog „magneta“
     const isTouch = matchMedia('(hover: none) and (pointer: coarse)').matches;
 
     const thumb = $('.scrollbar-thumb');
@@ -67,9 +70,10 @@
     const fits = () => sections.every(s => s.offsetHeight <= innerHeight + 2);
 
     const setMode = () => {
+        sections = $$('main > section:not([hidden])');
+        index = Math.min(index, sections.length - 1);
         if (isTouch) {
             enabled = false;
-            root.classList.add('snap');
             updateUI();
             return;
         }
@@ -95,6 +99,8 @@
     addEventListener('wheel', e => {
         if (!enabled || busy()) return;
         e.preventDefault();
+        // vodoravni potez (trackpad) nad galerijom pomera traku, ne stranicu
+        if (e.target.closest('[data-gallery]') && Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
         const now = performance.now();
         const newGesture = now - lastWheel > WHEEL_GAP;
         lastWheel = now;
@@ -125,7 +131,12 @@
 
     /* ---------- Tastatura ---------- */
     addEventListener('keydown', e => {
-        if (e.key === 'Escape') { setMenu(false); closeModal(); }
+        if (e.key === 'Escape') { setMenu(false); closeModal(); closeLightbox(); }
+        if (lightboxOpen()) {
+            if (e.key === 'ArrowLeft') stepLightbox(-1);
+            if (e.key === 'ArrowRight') stepLightbox(1);
+            return;
+        }
         if (busy() || /input|textarea|select/i.test(e.target.tagName)) return;
         if (e.key === 'ArrowLeft') stepFilm(-1);
         if (e.key === 'ArrowRight') stepFilm(1);
@@ -218,9 +229,25 @@
        ====================================================================== */
     const film = $('[data-film]');
     let yearIdx = 0;
+    let catIdx = 0;
     let filmIdx = 0;
 
-    const currentFilms = () => (selection && selection.years[yearIdx]) ? selection.years[yearIdx].films : [];
+    /* Godina može biti podeljena na kategorije (year.categories, film.category).
+       Bez kategorija: jedna grupa sa svim filmovima, kao i do sad.
+       Filmovi bez kategorije idu u poslednju grupu „Ostalo“. */
+    const groups = y => {
+        const films = (y && y.films) || [];
+        const cats = (y && Array.isArray(y.categories)) ? y.categories : [];
+        const ids = new Set(cats.map(c => c.id));
+        const out = cats.map(c => ({ name: c.name, films: films.filter(f => f.category === c.id) }))
+            .filter(g => g.films.length);
+        if (!out.length) return [{ name: null, films }];
+        const rest = films.filter(f => !ids.has(f.category));
+        if (rest.length) out.push({ name: null, other: true, films: rest });
+        return out;
+    };
+    const currentGroups = () => groups(selection && selection.years[yearIdx]);
+    const currentFilms = () => (currentGroups()[catIdx] || { films: [] }).films;
     const pad = n => String(n).padStart(2, '0');
 
     const toEmbed = link => {
@@ -241,7 +268,25 @@
             b.textContent = y.year;
             b.setAttribute('role', 'tab');
             b.setAttribute('aria-selected', String(i === yearIdx));
-            b.addEventListener('click', () => { if (i !== yearIdx) { yearIdx = i; filmIdx = 0; renderYears(); renderFilm(); } });
+            b.addEventListener('click', () => { if (i !== yearIdx) { yearIdx = i; catIdx = 0; filmIdx = 0; renderYears(); renderCats(); renderFilm(); } });
+            wrap.appendChild(b);
+        });
+    };
+
+    const renderCats = () => {
+        const wrap = $('[data-cats]');
+        const list = currentGroups();
+        wrap.innerHTML = '';
+        wrap.hidden = list.length < 2;
+        if (list.length < 2) return;
+        const dict = (window.I18N || {})[lang] || {};
+        list.forEach((g, i) => {
+            const b = document.createElement('button');
+            b.type = 'button';
+            b.textContent = g.other ? (dict['selection.other'] || 'Other') : tr(g.name);
+            b.setAttribute('role', 'tab');
+            b.setAttribute('aria-selected', String(i === catIdx));
+            b.addEventListener('click', () => { if (i !== catIdx) { catIdx = i; filmIdx = 0; renderCats(); renderFilm(); } });
             wrap.appendChild(b);
         });
     };
@@ -251,7 +296,8 @@
         const f = films[filmIdx];
         if (!f) return;
         const img = $('[data-film-img]');
-        img.src = f.image || '';
+        img.hidden = !f.image;
+        if (f.image) img.src = f.image; else img.removeAttribute('src');
         img.alt = f.title || '';
         $('[data-film-title]').textContent = f.title || '';
         $('[data-film-director]').textContent = f.director || '';
@@ -366,6 +412,182 @@
     $('[data-modal-close]').addEventListener('click', closeModal);
     modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 
+    /* ======================================================================
+       Galerija (data/site.json → gallery.images): traka koja se sama vrti,
+       može da se povuče mišem / prstom; klik otvara sliku preko ekrana
+       ====================================================================== */
+    const GALLERY_SPEED = 40;     // px u sekundi
+    let galleryList = [];
+    let lbIdx = 0;
+
+    const renderGallery = () => {
+        const sec = $('[data-gallery-section]');
+        galleryList = ((site && site.gallery && site.gallery.images) || []).filter(Boolean);
+        sec.hidden = !galleryList.length;
+        setMode();
+        if (!galleryList.length) return;
+
+        const strip = $('[data-gallery]');
+        const track = $('[data-gallery-track]');
+        let period = 0;           // širina jednog kruga slika
+        let offset = 0;
+        let velocity = 0;         // zalet posle povlačenja
+        let hover = false;
+        let visible = false;
+        let drag = null;
+        let suppressClick = false;
+
+        const item = (src, i) => {
+            const b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'gallery-item';
+            b.dataset.i = i;
+            const img = new Image();
+            img.src = src;
+            img.alt = '';
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            img.draggable = false;
+            b.appendChild(img);
+            return b;
+        };
+
+        // Jedan krug se ponavlja dok ne bude širi od ekrana, pa se sve udvostruči –
+        // kad traka pređe jedan krug, vraća se na početak bez vidljivog skoka
+        const build = () => {
+            track.innerHTML = '';
+            const one = () => galleryList.forEach((src, i) => track.appendChild(item(src, i)));
+            one();
+            const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+            const w = track.children[galleryList.length - 1].getBoundingClientRect().right
+                - track.children[0].getBoundingClientRect().left + gap;
+            const reps = Math.max(1, Math.ceil(strip.clientWidth / Math.max(w, 1)));
+            for (let r = 1; r < reps * 2; r++) one();
+            period = w * reps;
+        };
+        build();
+
+        const wrap = () => { if (period) offset = ((offset % period) + period) % period; };
+        const paint = () => { track.style.transform = `translate3d(${-offset}px, 0, 0)`; };
+
+        let last = performance.now();
+        const tick = now => {
+            const dt = Math.min(now - last, 64) / 1000;
+            last = now;
+            if (!drag && visible && !lightboxOpen()) {
+                offset += ((hover ? 0 : GALLERY_SPEED) + velocity) * dt;
+                velocity *= Math.pow(0.04, dt);           // zalet se brzo gasi
+                if (Math.abs(velocity) < 2) velocity = 0;
+                wrap();
+                paint();
+            }
+            requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(strip);
+        } else visible = true;
+
+        strip.addEventListener('mouseenter', () => { hover = true; });
+        strip.addEventListener('mouseleave', () => { hover = false; });
+
+        strip.addEventListener('pointerdown', e => {
+            if (e.button !== 0) return;
+            drag = { x: e.clientX, start: offset, lastX: e.clientX, lastT: performance.now(), v: 0, moved: false, id: e.pointerId };
+            velocity = 0;
+        });
+        strip.addEventListener('pointermove', e => {
+            if (!drag || e.pointerId !== drag.id) return;
+            const dx = e.clientX - drag.x;
+            if (!drag.moved && Math.abs(dx) > 6) {
+                drag.moved = true;
+                strip.setPointerCapture(e.pointerId);
+                strip.classList.add('is-dragging');
+            }
+            if (!drag.moved) return;
+            const now = performance.now();
+            drag.v = -(e.clientX - drag.lastX) / Math.max(now - drag.lastT, 1) * 1000;
+            drag.lastX = e.clientX;
+            drag.lastT = now;
+            offset = drag.start - dx;
+            wrap();
+            paint();
+        });
+        const endDrag = e => {
+            if (!drag || e.pointerId !== drag.id) return;
+            if (drag.moved) {
+                velocity = Math.max(-2500, Math.min(2500, drag.v));
+                suppressClick = true;
+                setTimeout(() => { suppressClick = false; }, 0);
+            }
+            strip.classList.remove('is-dragging');
+            drag = null;
+            last = performance.now();
+        };
+        strip.addEventListener('pointerup', endDrag);
+        strip.addEventListener('pointercancel', endDrag);   // vertikalni skrol na telefonu
+
+        // trackpad: vodoravni potez pomera traku
+        strip.addEventListener('wheel', e => {
+            if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+            e.preventDefault();
+            offset += e.deltaX;
+            wrap();
+            paint();
+        }, { passive: false });
+
+        track.addEventListener('click', e => {
+            const b = e.target.closest('.gallery-item');
+            if (!b || suppressClick) return;
+            openLightbox(Number(b.dataset.i));
+        });
+
+        let rt;
+        addEventListener('resize', () => {
+            clearTimeout(rt);
+            rt = setTimeout(() => { const f = period ? offset / period : 0; build(); offset = f * period; paint(); }, 200);
+        });
+    };
+
+    /* ---------- Slika preko celog ekrana ---------- */
+    const showLightbox = () => {
+        $('[data-lightbox-img]', lightbox).src = galleryList[lbIdx];
+        $('[data-lightbox-count]', lightbox).textContent = `${pad(lbIdx + 1)} / ${pad(galleryList.length)}`;
+        const one = galleryList.length < 2;
+        $('[data-lightbox-prev]', lightbox).hidden = one;
+        $('[data-lightbox-next]', lightbox).hidden = one;
+        loadImage(galleryList[(lbIdx + 1) % galleryList.length]);
+    };
+    function openLightbox(i) {
+        lbIdx = i;
+        showLightbox();
+        lightbox.hidden = false;
+        root.classList.add('menu-lock');
+    }
+    function closeLightbox() {
+        if (!lightboxOpen()) return;
+        lightbox.hidden = true;
+        if (!menuOpen()) root.classList.remove('menu-lock');
+    }
+    function stepLightbox(d) {
+        if (galleryList.length < 2) return;
+        lbIdx = (lbIdx + d + galleryList.length) % galleryList.length;
+        showLightbox();
+    }
+    $('[data-lightbox-close]').addEventListener('click', closeLightbox);
+    $('[data-lightbox-prev]').addEventListener('click', () => stepLightbox(-1));
+    $('[data-lightbox-next]').addEventListener('click', () => stepLightbox(1));
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    let lx = null;
+    lightbox.addEventListener('touchstart', e => { lx = e.touches[0].clientX; }, { passive: true });
+    lightbox.addEventListener('touchend', e => {
+        if (lx === null) return;
+        const dx = e.changedTouches[0].clientX - lx;
+        if (Math.abs(dx) > 50) stepLightbox(dx < 0 ? 1 : -1);
+        lx = null;
+    });
+
     /* ---------- Jezik ---------- */
     const setLang = l => {
         const dict = (window.I18N || {})[l];
@@ -375,7 +597,7 @@
         $$('[data-i18n]').forEach(el => { if (dict[el.dataset.i18n]) el.textContent = dict[el.dataset.i18n]; });
         $$('[data-lang]').forEach(b => b.classList.toggle('is-active', b.dataset.lang === l));
         renderEvent();
-        if (selection) fillFilm();
+        if (selection && selection.years && selection.years.length) { renderCats(); fillFilm(); }
     };
     // Pamti se samo jezik koji je posetilac sam izabrao
     $$('[data-lang]').forEach(b => b.addEventListener('click', () => {
@@ -389,11 +611,12 @@
     setLang(saved);
 
     const getJSON = url => fetch(url, { cache: 'no-cache' }).then(r => r.json());
-    getJSON('data/site.json').then(d => { site = d; renderHero(); renderEvent(); }).catch(() => {});
+    getJSON('data/site.json').then(d => { site = d; renderHero(); renderEvent(); renderGallery(); }).catch(() => {});
     getJSON('data/selection.json').then(d => {
         selection = d;
         if (!selection.years || !selection.years.length) return;
         renderYears();
+        renderCats();
         renderFilm(false);
         setMode();
     }).catch(() => {});

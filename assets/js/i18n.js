@@ -7,8 +7,10 @@ window.I18N = {
         'nav.contact': 'Kontakt',
         'submit': 'Pošalji prijavu',
         'selection.title': 'Dosadašnja selekcija',
+        'selection.other': 'Ostalo',
         'film.director': 'Režija',
-        'film.trailer': 'Pogledaj trejler'
+        'film.trailer': 'Pogledaj trejler',
+        'gallery.title': 'Galerija'
     },
     en: {
         'nav.festival': 'Festival',
@@ -17,7 +19,9 @@ window.I18N = {
         'nav.contact': 'Contact',
         'submit': 'Submit your film',
         'selection.title': 'Past selections',
+        'selection.other': 'Other',
         'film.director': 'Director',
-        'film.trailer': 'Watch trailer'
+        'film.trailer': 'Watch trailer',
+        'gallery.title': 'Gallery'
     }
 };

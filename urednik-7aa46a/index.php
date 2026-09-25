@@ -79,6 +79,7 @@ $csrf = csrf_token();
         <nav class="side-nav" data-nav>
             <button type="button" data-view="selection">Selekcija po godinama</button>
             <button type="button" data-view="event">Početna: karusel i datum</button>
+            <button type="button" data-view="gallery">Galerija</button>
             <button type="button" data-view="contact">Kontakt i mreže</button>
             <button type="button" data-view="festival">O festivalu</button>
             <button type="button" data-view="about">O nama i tim</button>
@@ -100,7 +101,7 @@ $csrf = csrf_token();
     </div>
 </div>
 <div class="toast" data-toast hidden></div>
-<script src="admin.js?v=2"></script>
+<script src="admin.js?v=3"></script>
 <?php endif; ?>
 
 </body>

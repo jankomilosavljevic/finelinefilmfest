@@ -72,6 +72,8 @@
         <div class="selection-head">
             <h2 class="selection-title" data-i18n="selection.title">Past selections</h2>
             <div class="year-filter" role="tablist" data-years></div>
+            <!-- Kategorije izabrane godine (ako ih ima) – iz data/selection.json -->
+            <div class="cat-filter" role="tablist" data-cats hidden></div>
         </div>
 
         <div class="film" data-film>
@@ -103,10 +105,31 @@
             </button>
         </div>
     </section>
+
+    <!-- 3. GALERIJA – slike i redosled dolaze iz data/site.json (gallery), traka se vrti sama -->
+    <section class="gallery" id="galerija" data-gallery-section hidden>
+        <h2 class="gallery-title" data-i18n="gallery.title">Gallery</h2>
+        <div class="gallery-strip" data-gallery>
+            <div class="gallery-track" data-gallery-track></div>
+        </div>
+    </section>
 </main>
 
 <!-- Sopstvena linija skrola: pokazuje gde si i koliko stranica ima -->
 <div class="scrollbar" aria-hidden="true"><span class="scrollbar-thumb"></span></div>
+
+<!-- Galerija: slika preko celog ekrana -->
+<div class="lightbox" data-lightbox hidden>
+    <button class="modal-close" type="button" data-lightbox-close aria-label="Close">×</button>
+    <button class="lightbox-arrow is-prev" type="button" data-lightbox-prev aria-label="Prev">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+    </button>
+    <img alt="" data-lightbox-img>
+    <button class="lightbox-arrow is-next" type="button" data-lightbox-next aria-label="Next">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+    <p class="lightbox-count" data-lightbox-count></p>
+</div>
 
 <!-- Trejler -->
 <div class="modal" data-modal hidden>
